@@ -209,7 +209,6 @@ public class ProfileSemesterCGPAControl implements Initializable{
         tfCourse5.setText("");
         tfCourse6.setText("");
 
-
         cbCredit1.getSelectionModel().select(-1);
         cbCredit2.getSelectionModel().select(-1);
         cbCredit3.getSelectionModel().select(-1);
