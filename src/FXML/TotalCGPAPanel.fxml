@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.TotalCGPAPanelControl">
+   <children>
+      <Label alignment="CENTER" layoutY="50.0" prefHeight="106.0" prefWidth="850.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247);" text="Total CGPA" textFill="WHITE">
+         <font>
+            <Font name="Candara Bold Italic" size="22.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btExit" layoutX="793.0" onAction="#exit" prefHeight="29.0" prefWidth="28.0" text="X">
+         <font>
+            <Font name="Candara Italic" size="23.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="tfCredit" layoutX="419.0" layoutY="296.0" prefHeight="45.0" prefWidth="236.0" promptText="Enter Credit" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;">
+         <font>
+            <Font name="System Italic" size="17.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER_RIGHT" layoutX="115.0" layoutY="296.0" prefHeight="41.0" prefWidth="236.0" text="Total Credit Completed : ">
+         <font>
+            <Font name="Candara Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfCGPA" layoutX="419.0" layoutY="369.0" prefHeight="45.0" prefWidth="236.0" promptText="Enter CGPA" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;">
+         <font>
+            <Font name="System Italic" size="17.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER_RIGHT" layoutX="115.0" layoutY="371.0" prefHeight="41.0" prefWidth="236.0" text="Current CGPA : ">
+         <font>
+            <Font name="Candara Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btNext" layoutX="469.0" layoutY="456.0" onAction="#next" prefHeight="40.0" prefWidth="136.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247); -fx-background-radius: 20;" text="NexT" textFill="WHITE">
+         <font>
+            <Font name="Candara Bold Italic" size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,4 @@
+--module-path
+"F:\Download\Soft\Java\JavaFx\javafx-sdk-16\lib"
+--add-modules
+javafx.controls,javafx.fxml

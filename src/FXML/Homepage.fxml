@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="582.0" prefWidth="879.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.HomepageControl">
+   <children>
+      <Label alignment="CENTER" prefHeight="146.0" prefWidth="879.0" style="-fx-background-color: #68fca3;" text="CGPA Calculator" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="Snap ITC" size="37.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <JFXButton fx:id="btNewProfile" alignment="CENTER" buttonType="RAISED" layoutX="277.0" layoutY="364.0" onAction="#newProfile" prefHeight="24.0" prefWidth="326.0" style="-fx-background-color: #67e6c6; -fx-background-radius: 100;" text="Create a New Profile" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btSemester" alignment="CENTER" buttonType="RAISED" layoutX="277.0" layoutY="216.0" onAction="#semesterCGPA" prefHeight="51.0" prefWidth="326.0" style="-fx-background-color: #67e6c6; -fx-background-radius: 100;" text="Semester CGPA" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btTotalCGPA" alignment="CENTER" buttonType="RAISED" layoutX="277.0" layoutY="291.0" onAction="#totalCGPA" prefHeight="51.0" prefWidth="326.0" style="-fx-background-color: #67e6c6; -fx-background-radius: 100;" text="Total CGPA" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btSavedProfile" alignment="CENTER" buttonType="RAISED" layoutX="277.0" layoutY="440.0" onAction="#savedProfile" prefHeight="24.0" prefWidth="326.0" style="-fx-background-color: #67e6c6; -fx-background-radius: 100;" text="Saved Profile" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

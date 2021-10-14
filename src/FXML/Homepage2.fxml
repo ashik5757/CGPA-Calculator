@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1134.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.Homepage2Control">
+   <children>
+      <AnchorPane prefHeight="700.0" prefWidth="284.0" style="-fx-background-color: linear-gradient(to left, #159957, #155799);;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="btSemesterCGPA" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutY="148.0" onAction="#semesterCGPA" prefHeight="67.0" prefWidth="284.0" text="Semester CGPA" textFill="WHITE">
+               <font>
+                  <Font name="Candara Bold Italic" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="CALCULATOR" size="18" />
+               </graphic>
+               <padding>
+                  <Insets left="40.0" />
+               </padding></JFXButton>
+            <JFXButton fx:id="btTotalCGPA" alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutY="231.0" onAction="#totalCGPA" prefHeight="67.0" prefWidth="284.0" text="Total CGPA" textFill="WHITE">
+               <font>
+                  <Font name="Candara Bold Italic" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="GRADUATION_CAP" size="18" />
+               </graphic>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btNewProfile" alignment="BASELINE_LEFT" graphicTextGap="18.0" layoutY="311.0" onAction="#newProfile" prefHeight="67.0" prefWidth="284.0" text="Create a New Profile" textFill="WHITE">
+               <font>
+                  <Font name="Candara Bold Italic" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER_PLUS" size="18" />
+               </graphic>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btSavedProfile" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutY="395.0" onAction="#savedProfile" prefHeight="67.0" prefWidth="284.0" text="Saved Profile" textFill="WHITE">
+               <font>
+                  <Font name="Candara Bold Italic" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="18" />
+               </graphic>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="mainPanel" layoutX="284.0" prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>

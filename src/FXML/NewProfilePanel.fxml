@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.NewProfilePanelControl">
+   <children>
+      <TextField fx:id="tfName" layoutX="353.0" layoutY="247.0" prefHeight="39.0" prefWidth="330.0" promptText="Enter a name" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;">
+         <font>
+            <Font name="System Italic" size="17.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="247.0" prefHeight="41.0" prefWidth="192.0" text="Profile name : ">
+         <font>
+            <Font name="Candara Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btCreate" layoutX="422.0" layoutY="492.0" onAction="#createProfile" prefHeight="42.0" prefWidth="192.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247); -fx-background-radius: 20;" text="Crerate Profile" textFill="WHITE">
+         <font>
+            <Font name="Candara Bold Italic" size="20.0" />
+         </font>
+      </JFXButton>
+      <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="316.0" prefHeight="41.0" prefWidth="192.0" text="Starting Semester : ">
+         <font>
+            <Font name="Candara Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbSession" layoutX="353.0" layoutY="315.0" prefHeight="42.0" prefWidth="173.0" promptText="Session" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+      <ComboBox fx:id="cbYear" layoutX="568.0" layoutY="315.0" prefHeight="42.0" prefWidth="115.0" promptText="Year" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+      <Label alignment="CENTER" layoutX="534.0" layoutY="326.0" prefHeight="17.0" prefWidth="28.0" text="-">
+         <font>
+            <Font name="Algerian" size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="394.0" prefHeight="41.0" prefWidth="192.0" text="Department : ">
+         <font>
+            <Font name="Candara Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbDept" layoutX="353.0" layoutY="393.0" prefHeight="42.0" prefWidth="330.0" promptText="Select Department" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+      <Label alignment="CENTER" layoutY="50.0" prefHeight="106.0" prefWidth="850.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247);" text="Create a New Profile" textFill="WHITE">
+         <font>
+            <Font name="Candara Bold Italic" size="22.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btExit" layoutX="793.0" onAction="#exit" prefHeight="29.0" prefWidth="28.0" text="X">
+         <font>
+            <Font name="Candara Italic" size="23.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
