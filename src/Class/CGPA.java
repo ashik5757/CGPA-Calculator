@@ -1,5 +1,6 @@
 package Class;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class CGPA {
@@ -9,6 +10,7 @@ public class CGPA {
     private double calculatedCGPA;
     private double totalCredit;
     private ArrayList<Course> courseList;
+    DecimalFormat twoPoint = new DecimalFormat("#.##");
 
 
     public CGPA() {
@@ -51,7 +53,7 @@ public class CGPA {
 
         this.calculatedCGPA = totalGP/totalCredit;
 
-        return calculatedCGPA;
+        return Double.parseDouble(twoPoint.format(calculatedCGPA));
     }
 
 //    public void setCalculatedCGPA(double calculatedCGPA) {
