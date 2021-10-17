@@ -281,6 +281,8 @@ public class SemesterCGPAPanelControl implements Initializable {
         cbGrade5.setPromptText("Grade");
         cbGrade6.setPromptText("Grade");
 
+        lbCGPA.setText("CGPA : " + 0.0);
+        lbCredit.setText("Total Credit : " + 0.0);
 
     }
 
