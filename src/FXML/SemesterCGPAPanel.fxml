@@ -153,12 +153,12 @@
             </HBox>
          </children>
       </GridPane>
-      <Label fx:id="lbCGPA" alignment="CENTER" layoutX="142.0" layoutY="618.0" prefHeight="42.0" prefWidth="216.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" text="CGPA : 3.75">
+      <Label fx:id="lbCGPA" alignment="CENTER" layoutX="142.0" layoutY="618.0" prefHeight="42.0" prefWidth="216.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" text="CGPA : 0.0">
          <font>
             <Font name="Candara Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lbCredit" alignment="CENTER" layoutX="526.0" layoutY="618.0" prefHeight="42.0" prefWidth="216.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" text="Total Credit : 10.5">
+      <Label fx:id="lbCredit" alignment="CENTER" layoutX="526.0" layoutY="618.0" prefHeight="42.0" prefWidth="216.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" text="Total Credit : 0.0">
          <font>
             <Font name="Candara Bold Italic" size="20.0" />
          </font>
