@@ -42,16 +42,15 @@ public class CGPA {
     public double getCalculatedCGPA() {
 
         double totalGP = 0.0;
-        totalCredit = getTotalCredit();
+//        totalCredit = getTotalCredit();
 
         for (Course course : courseList) {
             totalGP += course.getCredit()*course.getGrade();
         }
 
         totalGP += currentCGPA*currentCredit;
-        totalCredit += currentCredit;
 
-        this.calculatedCGPA = totalGP/totalCredit;
+        this.calculatedCGPA = totalGP/getTotalCredit();
 
         return Double.parseDouble(twoPoint.format(calculatedCGPA));
     }
@@ -62,7 +61,7 @@ public class CGPA {
 
     public double getTotalCredit() {
 
-        this.totalCredit = 0.0;
+        this.totalCredit = currentCredit;
 
         for (Course course : courseList) {
             totalCredit += course.getCredit();
