@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.NewProfile.CalculatePanelControl">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.SavedProfile.CalculatePanelControl">
    <children>
       <JFXButton fx:id="btSemesterCGPA" alignment="CENTER" layoutX="79.0" layoutY="37.0" onAction="#semesterCGPA" prefHeight="51.0" prefWidth="327.0" styleClass="button-border25" stylesheets="@../../CSS/CssStyleSheet.css" text="Semester CGPA">
          <font>

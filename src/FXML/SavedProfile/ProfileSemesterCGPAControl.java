@@ -1,4 +1,4 @@
-package FXML.NewProfile;
+package FXML.SavedProfile;
 
 import Class.*;
 import com.jfoenix.controls.JFXButton;
