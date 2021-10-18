@@ -30,7 +30,7 @@ public class ProfilePanelControl {
     @FXML
     void calculate(ActionEvent event) throws IOException {
 
-        Parent panel = FXMLLoader.load(getClass().getResource("NewProfile/CalculatePanel.fxml"));
+        Parent panel = FXMLLoader.load(getClass().getResource("SavedProfile/CalculatePanel.fxml"));
         mainPanel.getChildren().setAll(panel);
 
     }
@@ -50,7 +50,7 @@ public class ProfilePanelControl {
     @FXML
     void profile(ActionEvent event) throws IOException {
 
-        Parent panel = FXMLLoader.load(getClass().getResource("NewProfile/ProfileData.fxml"));
+        Parent panel = FXMLLoader.load(getClass().getResource("SavedProfile/ProfileData.fxml"));
         mainPanel.getChildren().setAll(panel);
 
     }
