@@ -5,10 +5,7 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
@@ -224,42 +221,20 @@ public class TotalCGPAPanel2Control implements Initializable {
     @FXML
     void reset(ActionEvent event) {
 
-//        setCbCourse(cbCourse1);
-//        setCbCourse(cbCourse2);
-//        setCbCourse(cbCourse3);
-//        setCbCourse(cbCourse4);
-//        setCbCourse(cbCourse5);
-//        setCbCourse(cbCourse6);
-
-        setCbCredit(cbCredit1);
-        setCbCredit(cbCredit2);
-        setCbCredit(cbCredit3);
-        setCbCredit(cbCredit4);
-        setCbCredit(cbCredit5);
-        setCbCredit(cbCredit6);
-
-        setGrade(cbGrade1);
-        setGrade(cbGrade2);
-        setGrade(cbGrade3);
-        setGrade(cbGrade4);
-        setGrade(cbGrade5);
-        setGrade(cbGrade6);
-
-
-//        cbCourse1.getSelectionModel().select(-1);
-//        //cbCourse1.getSelectionModel().clearSelection();
-//        cbCourse2.getSelectionModel().select(-1);
-//        cbCourse3.getSelectionModel().select(-1);
-//        cbCourse4.getSelectionModel().select(-1);
-//        cbCourse5.getSelectionModel().select(-1);
-//        cbCourse6.getSelectionModel().select(-1);
+//        setCbCredit(cbCredit1);
+//        setCbCredit(cbCredit2);
+//        setCbCredit(cbCredit3);
+//        setCbCredit(cbCredit4);
+//        setCbCredit(cbCredit5);
+//        setCbCredit(cbCredit6);
 //
-//        cbCourse1.setPromptText("Course");
-//        cbCourse2.setPromptText("Course");
-//        cbCourse3.setPromptText("Course");
-//        cbCourse4.setPromptText("Course");
-//        cbCourse5.setPromptText("Course");
-//        cbCourse6.setPromptText("Course");
+//        setGrade(cbGrade1);
+//        setGrade(cbGrade2);
+//        setGrade(cbGrade3);
+//        setGrade(cbGrade4);
+//        setGrade(cbGrade5);
+//        setGrade(cbGrade6);
+
 
         tfCourse1.setText("");
         tfCourse2.setText("");
@@ -269,39 +244,70 @@ public class TotalCGPAPanel2Control implements Initializable {
         tfCourse6.setText("");
 
 
-        cbCredit1.getSelectionModel().select(-1);
-        cbCredit2.getSelectionModel().select(-1);
-        cbCredit3.getSelectionModel().select(-1);
-        cbCredit4.getSelectionModel().select(-1);
-        cbCredit5.getSelectionModel().select(-1);
-        cbCredit6.getSelectionModel().select(-1);
 
-        cbCredit1.setPromptText("Credit");
-        cbCredit2.setPromptText("Credit");
-        cbCredit3.setPromptText("Credit");
-        cbCredit4.setPromptText("Credit");
-        cbCredit5.setPromptText("Credit");
-        cbCredit6.setPromptText("Credit");
+        creditReset(cbCredit1);
+        creditReset(cbCredit2);
+        creditReset(cbCredit3);
+        creditReset(cbCredit4);
+        creditReset(cbCredit5);
+        creditReset(cbCredit6);
 
 
-        cbGrade1.getSelectionModel().select(-1);
-        cbGrade2.getSelectionModel().select(-1);
-        cbGrade3.getSelectionModel().select(-1);
-        cbGrade4.getSelectionModel().select(-1);
-        cbGrade5.getSelectionModel().select(-1);
-        cbGrade6.getSelectionModel().select(-1);
+        gradeReset(cbGrade1);
+        gradeReset(cbGrade2);
+        gradeReset(cbGrade3);
+        gradeReset(cbGrade4);
+        gradeReset(cbGrade5);
+        gradeReset(cbGrade6);
 
-        cbGrade1.setPromptText("Grade");
-        cbGrade2.setPromptText("Grade");
-        cbGrade3.setPromptText("Grade");
-        cbGrade4.setPromptText("Grade");
-        cbGrade5.setPromptText("Grade");
-        cbGrade6.setPromptText("Grade");
+
 
         lbCGPA.setText("Total CGPA : " + 0.0);
         lbCredit.setText("Total Credit : " + 0.0);
 
     }
+
+    public void gradeReset(ComboBox<String> grade) {
+
+        grade.getSelectionModel().clearSelection();
+
+        grade.setButtonCell(new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText("Grade");
+                } else {
+                    setText(item);
+                }
+            }
+        });
+    }
+
+
+    public void creditReset(ComboBox<Double> credit) {
+
+        credit.getSelectionModel().clearSelection();
+
+        credit.setButtonCell(new ListCell<Double>() {
+            @Override
+            protected void updateItem(Double item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == -1) {
+                    setText("Credit");
+                } else {
+                    setText(String.valueOf(item));
+                }
+            }
+        });
+    }
+
+
+
+
+
+
+
 
     @FXML
     void calculate(ActionEvent event) {
