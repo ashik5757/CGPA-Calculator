@@ -47,7 +47,7 @@ public class TotalCGPAPanelControl {
             credit = Double.parseDouble(tfCredit.getText());
             cgpa = Double.parseDouble(tfCGPA.getText());
 
-            if (cgpa<=4.0 && cgpa>=0) {
+            if ((cgpa<=4.0 && cgpa>=0) && (credit>=0 && credit<=200) ) {
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("TotalCGPAPanel2.fxml"));
                 Parent panel = loader.load();
@@ -62,14 +62,24 @@ public class TotalCGPAPanelControl {
             }
 
             else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("ERROR");
-                alert.setHeaderText("CGPA is Invalid");
-                alert.setContentText("Please input correct CGPA");
-                alert.show();
+
+                if (!(credit>=0 && credit<=200)) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("ERROR");
+                    alert.setHeaderText("Credit is Invalid");
+                    alert.setContentText("Please input correct Credit");
+                    alert.show();
+                }
+
+                else if (!(cgpa<=4.0 && cgpa>=0)) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("ERROR");
+                    alert.setHeaderText("CGPA is Invalid");
+                    alert.setContentText("Please input correct CGPA");
+                    alert.show();
+                }
 
             }
-
 
 
 
@@ -77,7 +87,7 @@ public class TotalCGPAPanelControl {
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("ERROR");
-            alert.setHeaderText("Input format incorrect");
+            alert.setHeaderText("Input format incorrect or Empty");
             alert.setContentText("Please input correct format");
             alert.show();
         }
