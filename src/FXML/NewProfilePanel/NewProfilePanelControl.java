@@ -1,4 +1,4 @@
-package FXML;
+package FXML.NewProfilePanel;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -39,7 +39,7 @@ public class NewProfilePanelControl implements Initializable {
     @FXML
     void createProfile(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfilePanel.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../SavedProfileData/ProfilePanel.fxml"));
         Parent root = loader.load();
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

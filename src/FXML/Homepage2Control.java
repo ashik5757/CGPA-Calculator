@@ -1,5 +1,6 @@
 package FXML;
 
+import FXML.TotalCGPAPanel.TotalCGPAPanelControl;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,7 +30,7 @@ public class Homepage2Control {
     @FXML
     void newProfile(ActionEvent event) throws IOException {
 
-        Parent panel = FXMLLoader.load(getClass().getResource("NewProfilePanel.fxml"));
+        Parent panel = FXMLLoader.load(getClass().getResource("NewProfilePanel/NewProfilePanel.fxml"));
         mainPanel.getChildren().setAll(panel);
 
 
@@ -37,14 +38,14 @@ public class Homepage2Control {
 
     @FXML
     void savedProfile(ActionEvent event) throws IOException {
-        Parent panel = FXMLLoader.load(getClass().getResource("SavedProfilePanel.fxml"));
+        Parent panel = FXMLLoader.load(getClass().getResource("SavedProfilePanel/SavedProfilePanel.fxml"));
         mainPanel.getChildren().setAll(panel);
     }
 
     @FXML
     void semesterCGPA(ActionEvent event) throws IOException {
 
-        Parent panel = FXMLLoader.load(getClass().getResource("SemesterCGPAPanel.fxml"));
+        Parent panel = FXMLLoader.load(getClass().getResource("SemesterCGPAPanel/SemesterCGPAPanel.fxml"));
         mainPanel.getChildren().setAll(panel);
 
 
@@ -56,7 +57,7 @@ public class Homepage2Control {
         //Parent panel = FXMLLoader.load(getClass().getResource("TotalCGPAPanel.fxml"));
         //mainPanel.getChildren().setAll(panel);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("TotalCGPAPanel.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("TotalCGPAPanel/TotalCGPAPanel.fxml"));
         Parent panel = loader.load();
         mainPanel.getChildren().setAll(panel);
 

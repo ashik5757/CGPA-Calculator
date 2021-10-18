@@ -1,6 +1,5 @@
-package FXML;
+package FXML.TotalCGPAPanel;
 
-import Class.*;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

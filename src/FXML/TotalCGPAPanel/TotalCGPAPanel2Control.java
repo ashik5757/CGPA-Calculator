@@ -1,21 +1,18 @@
-package FXML.SavedProfile;
+package FXML.TotalCGPAPanel;
 
 import Class.*;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ProfileSemesterCGPAControl implements Initializable{
+public class TotalCGPAPanel2Control implements Initializable {
 
     @FXML
     private GridPane addGridPane;
@@ -28,6 +25,9 @@ public class ProfileSemesterCGPAControl implements Initializable{
 
     @FXML
     private JFXButton btCalculate;
+
+    @FXML
+    private JFXButton btExit;
 
     @FXML
     private JFXButton btReset;
@@ -49,6 +49,24 @@ public class ProfileSemesterCGPAControl implements Initializable{
 
     @FXML
     private TextField tfCourse6;
+
+//    @FXML
+//    private ComboBox<String> cbCourse1;
+//
+//    @FXML
+//    private ComboBox<String> cbCourse2;
+//
+//    @FXML
+//    private ComboBox<String> cbCourse3;
+//
+//    @FXML
+//    private ComboBox<String> cbCourse4;
+//
+//    @FXML
+//    private ComboBox<String> cbCourse5;
+//
+//    @FXML
+//    private ComboBox<String> cbCourse6;
 
     @FXML
     private ComboBox<Double> cbCredit1;
@@ -108,7 +126,21 @@ public class ProfileSemesterCGPAControl implements Initializable{
     private Label lbCredit;
 
     @FXML
-    private JFXButton btAddProfile;
+    private Label lbCurrentCGPA;
+
+    @FXML
+    private Label lbCurrentCredit;
+
+    private double currentCGPA;
+    private double currentCredit;
+
+    public void setCurrentCGPA(double currentCGPA) {
+        this.currentCGPA = currentCGPA;
+    }
+
+    public void setCurrentCredit(double currentCredit) {
+        this.currentCredit = currentCredit;
+    }
 
     @FXML
     void addCourse(ActionEvent event) {
@@ -189,19 +221,19 @@ public class ProfileSemesterCGPAControl implements Initializable{
     @FXML
     void reset(ActionEvent event) {
 
-        setCbCredit(cbCredit1);
-        setCbCredit(cbCredit2);
-        setCbCredit(cbCredit3);
-        setCbCredit(cbCredit4);
-        setCbCredit(cbCredit5);
-        setCbCredit(cbCredit6);
-
-        setGrade(cbGrade1);
-        setGrade(cbGrade2);
-        setGrade(cbGrade3);
-        setGrade(cbGrade4);
-        setGrade(cbGrade5);
-        setGrade(cbGrade6);
+//        setCbCredit(cbCredit1);
+//        setCbCredit(cbCredit2);
+//        setCbCredit(cbCredit3);
+//        setCbCredit(cbCredit4);
+//        setCbCredit(cbCredit5);
+//        setCbCredit(cbCredit6);
+//
+//        setGrade(cbGrade1);
+//        setGrade(cbGrade2);
+//        setGrade(cbGrade3);
+//        setGrade(cbGrade4);
+//        setGrade(cbGrade5);
+//        setGrade(cbGrade6);
 
 
         tfCourse1.setText("");
@@ -211,37 +243,71 @@ public class ProfileSemesterCGPAControl implements Initializable{
         tfCourse5.setText("");
         tfCourse6.setText("");
 
-        cbCredit1.getSelectionModel().select(-1);
-        cbCredit2.getSelectionModel().select(-1);
-        cbCredit3.getSelectionModel().select(-1);
-        cbCredit4.getSelectionModel().select(-1);
-        cbCredit5.getSelectionModel().select(-1);
-        cbCredit6.getSelectionModel().select(-1);
-
-        cbCredit1.setPromptText("Credit");
-        cbCredit2.setPromptText("Credit");
-        cbCredit3.setPromptText("Credit");
-        cbCredit4.setPromptText("Credit");
-        cbCredit5.setPromptText("Credit");
-        cbCredit6.setPromptText("Credit");
 
 
-        cbGrade1.getSelectionModel().select(-1);
-        cbGrade2.getSelectionModel().select(-1);
-        cbGrade3.getSelectionModel().select(-1);
-        cbGrade4.getSelectionModel().select(-1);
-        cbGrade5.getSelectionModel().select(-1);
-        cbGrade6.getSelectionModel().select(-1);
+        creditReset(cbCredit1);
+        creditReset(cbCredit2);
+        creditReset(cbCredit3);
+        creditReset(cbCredit4);
+        creditReset(cbCredit5);
+        creditReset(cbCredit6);
 
-        cbGrade1.setPromptText("Grade");
-        cbGrade2.setPromptText("Grade");
-        cbGrade3.setPromptText("Grade");
-        cbGrade4.setPromptText("Grade");
-        cbGrade5.setPromptText("Grade");
-        cbGrade6.setPromptText("Grade");
 
+        gradeReset(cbGrade1);
+        gradeReset(cbGrade2);
+        gradeReset(cbGrade3);
+        gradeReset(cbGrade4);
+        gradeReset(cbGrade5);
+        gradeReset(cbGrade6);
+
+
+
+        lbCGPA.setText("Total CGPA : " + 0.0);
+        lbCredit.setText("Total Credit : " + 0.0);
 
     }
+
+    public void gradeReset(ComboBox<String> grade) {
+
+        grade.getSelectionModel().clearSelection();
+
+        grade.setButtonCell(new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText("Grade");
+                } else {
+                    setText(item);
+                }
+            }
+        });
+    }
+
+
+    public void creditReset(ComboBox<Double> credit) {
+
+        credit.getSelectionModel().clearSelection();
+
+        credit.setButtonCell(new ListCell<Double>() {
+            @Override
+            protected void updateItem(Double item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == -1) {
+                    setText("Credit");
+                } else {
+                    setText(String.valueOf(item));
+                }
+            }
+        });
+    }
+
+
+
+
+
+
+
 
     @FXML
     void calculate(ActionEvent event) {
@@ -251,8 +317,7 @@ public class ProfileSemesterCGPAControl implements Initializable{
         int gradeError = 0;
 
 
-        CGPA cgpa = new CGPA(0,0);
-
+        CGPA cgpa = new CGPA(currentCGPA,currentCredit);
 
 
         if (tfCourse1.getText().isBlank() || cbCredit1.getValue()==null || cbGrade1.getValue()==null ||
@@ -386,37 +451,61 @@ public class ProfileSemesterCGPAControl implements Initializable{
 
 
         if (textError==0 && creditError==0 && gradeError==0) {
-            lbCGPA.setText("CGPA : " + cgpa.getCalculatedCGPA());
+            lbCGPA.setText("Total CGPA : " + cgpa.getCalculatedCGPA());
             lbCredit.setText("Total Credit : " + cgpa.getTotalCredit());
         }
+
+
 
 
 
     }
 
     @FXML
-    void addToProfile(ActionEvent event) {
+    void exit(ActionEvent event) {
 
+        System.exit(0);
     }
 
-
+//    public void setCbCourse(ComboBox<String> course) {
+//
+//        String[] courseList = {"ACT102","ENG101","ENG102","CSE103"};
+//        course.getItems().setAll(courseList);
+//
+//    }
 
     public void setCbCredit(ComboBox<Double> credit) {
 
-        Double[] creditList = {0.5,1.0,2.0,3.0,4.0};
+        Double[] creditList = {0.5,1.0,2.0,3.0,4.0,4.5};
         credit.getItems().setAll(creditList);
 
     }
 
     public void setGrade(ComboBox<String> grade) {
 
-        String[] gradeList = {"A","A-","B+","B","B-","C+","C","C-","D+","D","F"};
+        String[] gradeList = {"A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"};
         grade.getItems().setAll(gradeList);
 
     }
 
+    public void setLabel() {
+        this.lbCurrentCGPA.setText("Current CGPA : " + this.currentCGPA);
+        this.lbCurrentCredit.setText("Current Credit Completed : " + this.currentCredit);
+    }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+//        setCbCourse(cbCourse1);
+//        setCbCourse(cbCourse2);
+//        setCbCourse(cbCourse3);
+//        setCbCourse(cbCourse4);
+//        setCbCourse(cbCourse5);
+//        setCbCourse(cbCourse6);
+
+
+
 
         setCbCredit(cbCredit1);
         setCbCredit(cbCredit2);

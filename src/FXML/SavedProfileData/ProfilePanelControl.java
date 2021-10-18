@@ -1,4 +1,4 @@
-package FXML;
+package FXML.SavedProfileData;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -30,7 +30,7 @@ public class ProfilePanelControl {
     @FXML
     void calculate(ActionEvent event) throws IOException {
 
-        Parent panel = FXMLLoader.load(getClass().getResource("SavedProfile/CalculatePanel.fxml"));
+        Parent panel = FXMLLoader.load(getClass().getResource("CalculatePanel.fxml"));
         mainPanel.getChildren().setAll(panel);
 
     }
@@ -38,7 +38,7 @@ public class ProfilePanelControl {
     @FXML
     void home(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Homepage2.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Homepage2.fxml"));
         Parent root = loader.load();
 
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -50,7 +50,7 @@ public class ProfilePanelControl {
     @FXML
     void profile(ActionEvent event) throws IOException {
 
-        Parent panel = FXMLLoader.load(getClass().getResource("SavedProfile/ProfileData.fxml"));
+        Parent panel = FXMLLoader.load(getClass().getResource("ProfileData.fxml"));
         mainPanel.getChildren().setAll(panel);
 
     }

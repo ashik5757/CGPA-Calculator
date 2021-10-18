@@ -1,4 +1,4 @@
-package FXML;
+package FXML.SemesterCGPAPanel;
 
 import Class.*;
 import com.jfoenix.controls.JFXButton;
