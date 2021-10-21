@@ -22,7 +22,7 @@ public class NewProfilePanelControl implements Initializable {
     private JFXButton btCreate;
 
     @FXML
-    private ComboBox<String> cbDept;
+    private ComboBox<String> cbUniversity;
 
     @FXML
     private ComboBox<String> cbSession;
@@ -57,9 +57,10 @@ public class NewProfilePanelControl implements Initializable {
 
     }
 
-    public void setCbDept() {
-        String[] dept = {"EEE","CE","CSE","ME","ARC.E"};
-        cbDept.getItems().setAll(dept);
+    public void setCbUniversity() {
+
+        String[] uniList = {"EWU","NSU","AIUB","AUST","IUB"};
+        cbUniversity.getItems().setAll(uniList);
     }
 
     public void setCbSession() {
@@ -75,7 +76,7 @@ public class NewProfilePanelControl implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        setCbDept();
+        setCbUniversity();
         setCbSession();
         setCbYear();
 

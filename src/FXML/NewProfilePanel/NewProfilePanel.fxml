@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.NewProfilePanel.NewProfilePanelControl">
+<AnchorPane prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.NewProfilePanel.NewProfilePanelControl">
    <children>
       <TextField fx:id="tfName" layoutX="353.0" layoutY="247.0" prefHeight="39.0" prefWidth="330.0" promptText="Enter a name" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;">
          <font>
@@ -36,12 +36,12 @@
             <Font name="Algerian" size="19.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="394.0" prefHeight="41.0" prefWidth="192.0" text="Department : ">
+      <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="394.0" prefHeight="41.0" prefWidth="192.0" text="University : ">
          <font>
             <Font name="Candara Bold Italic" size="19.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbDept" layoutX="353.0" layoutY="393.0" prefHeight="42.0" prefWidth="330.0" promptText="Select Department" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+      <ComboBox fx:id="cbUniversity" layoutX="353.0" layoutY="393.0" prefHeight="42.0" prefWidth="330.0" promptText="Select University" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
       <Label alignment="CENTER" layoutY="50.0" prefHeight="106.0" prefWidth="850.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247);" text="Create a New Profile" textFill="WHITE">
          <font>
             <Font name="Candara Bold Italic" size="22.0" />
