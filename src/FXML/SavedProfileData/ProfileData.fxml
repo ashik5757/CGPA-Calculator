@@ -12,21 +12,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.SavedProfileData.ProfileDataControl">
    <children>
-      <Label alignment="CENTER" layoutY="50.0" prefHeight="106.0" prefWidth="850.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247);" text="Profile" textFill="WHITE">
-         <font>
-            <Font name="Candara Bold Italic" size="22.0" />
-         </font>
-      </Label>
       <JFXButton fx:id="btExit" layoutX="793.0" layoutY="5.0" onAction="#exit" prefHeight="29.0" prefWidth="28.0" text="X">
          <font>
             <Font name="Candara Italic" size="23.0" />
          </font>
       </JFXButton>
-      <ScrollPane layoutY="189.0" prefHeight="511.0" prefWidth="850.0" style="-fx-background-color: white;">
+      <ScrollPane layoutY="226.0" prefHeight="474.0" prefWidth="850.0" style="-fx-background-color: white;">
          <content>
             <GridPane fx:id="gridPane" alignment="CENTER" hgap="10.0" prefHeight="641.0" prefWidth="847.0" style="-fx-background-color: white;" vgap="10.0">
               <columnConstraints>
@@ -43,7 +39,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <JFXButton fx:id="bt1" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" onAction="#session1" prefHeight="179.0" prefWidth="362.0" styleClass="button-border25" stylesheets="@../../CSS/CssStyleSheet.css" text="Button">
+                  <JFXButton fx:id="bt1" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" onAction="#session1" prefHeight="108.0" prefWidth="276.0" styleClass="button-border25" stylesheets="@../../CSS/CssStyleSheet.css" text="Button">
                      <font>
                         <Font name="Candara Bold Italic" size="18.0" />
                      </font>
@@ -464,5 +460,41 @@
             </GridPane>
          </content>
       </ScrollPane>
+      <Label layoutX="372.0" layoutY="58.0" prefHeight="45.0" prefWidth="74.0" text="Profile" textFill="WHITE">
+         <font>
+            <Font name="Candara Bold Italic" size="25.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutY="46.0" prefHeight="157.0" prefWidth="850.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247);;">
+         <children>
+            <Label alignment="CENTER" layoutX="358.0" layoutY="59.0" prefHeight="45.0" prefWidth="134.0" text="| Profile |" textFill="WHITE">
+               <font>
+                  <Font name="Candara Bold Italic" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbName" layoutX="70.0" layoutY="35.0" prefHeight="45.0" prefWidth="218.0" text="Name : Ashik" textFill="WHITE">
+               <font>
+                  <Font name="Candara Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbCredit" alignment="CENTER_RIGHT" layoutX="570.0" layoutY="89.0" prefHeight="45.0" prefWidth="218.0" text="Credit Completed : 31.5" textFill="WHITE">
+               <font>
+                  <Font name="Candara Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbCGPA" alignment="CENTER_RIGHT" layoutX="644.0" layoutY="36.0" prefHeight="45.0" prefWidth="144.0" text="CGPA : 3.71" textFill="WHITE">
+               <font>
+                  <Font name="Candara Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbUniversity" layoutX="70.0" layoutY="89.0" prefHeight="45.0" prefWidth="218.0" text="University : EWU" textFill="WHITE">
+               <font>
+                  <Font name="Candara Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <Line endX="48.0" endY="61.0" layoutX="310.0" layoutY="46.0" startX="48.0" startY="9.0" stroke="WHITE" strokeWidth="3.0" />
+            <Line endX="48.0" endY="61.0" layoutX="444.0" layoutY="46.0" startX="48.0" startY="9.0" stroke="WHITE" strokeWidth="3.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

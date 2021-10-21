@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 public class ProfileDataControl {
@@ -68,6 +69,18 @@ public class ProfileDataControl {
 
     @FXML
     private JFXButton bt6;
+
+    @FXML
+    private Label lbName;
+
+    @FXML
+    private Label lbCredit;
+
+    @FXML
+    private Label lbCGPA;
+
+    @FXML
+    private Label lbUniversity;
 
     @FXML
     void exit(ActionEvent event) {
