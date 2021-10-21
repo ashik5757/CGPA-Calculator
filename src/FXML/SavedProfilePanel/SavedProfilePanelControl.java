@@ -21,7 +21,7 @@ public class SavedProfilePanelControl {
     private JFXButton btOpenProfile;
 
     @FXML
-    private ComboBox<?> cbSavedProfile;
+    private ComboBox<String> cbSavedProfile;
 
     @FXML
     void exit(ActionEvent event) {
