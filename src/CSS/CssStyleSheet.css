@@ -30,3 +30,10 @@
 -fx-background-radius : 25;
 -fx-border-radius : 25;
 }
+
+.combo-box {
+-fx-background-color : white;
+-fx-background-radius : 20;
+-fx-border-color :  linear-gradient(to left, #283c86, #45a247);
+-fx-border-radius : 20;
+}
