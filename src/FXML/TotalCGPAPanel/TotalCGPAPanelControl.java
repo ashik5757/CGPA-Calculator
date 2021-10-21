@@ -4,14 +4,18 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class TotalCGPAPanelControl {
+public class TotalCGPAPanelControl implements Initializable {
 
     @FXML
     private JFXButton btExit;
@@ -24,6 +28,9 @@ public class TotalCGPAPanelControl {
 
     @FXML
     private JFXButton btNext;
+
+    @FXML
+    private ComboBox<String> cbUniversity;
 
     private AnchorPane mainPanel;
 
@@ -46,7 +53,7 @@ public class TotalCGPAPanelControl {
             credit = Double.parseDouble(tfCredit.getText());
             cgpa = Double.parseDouble(tfCGPA.getText());
 
-            if ((cgpa<=4.0 && cgpa>=0) && (credit>=0 && credit<=200) ) {
+            if ((cgpa<=4.0 && cgpa>=0) && (credit>=0 && credit<=200) && cbUniversity.getValue()!=null) {
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("TotalCGPAPanel2.fxml"));
                 Parent panel = loader.load();
@@ -55,6 +62,9 @@ public class TotalCGPAPanelControl {
                 totalCGPAPanel2Control.setCurrentCGPA(cgpa);
                 totalCGPAPanel2Control.setCurrentCredit(credit);
                 totalCGPAPanel2Control.setLabel();
+                totalCGPAPanel2Control.setUniversity(cbUniversity.getValue());
+                totalCGPAPanel2Control.setAllGrade();
+
 
                 mainPanel.getChildren().setAll(panel);
 
@@ -78,6 +88,14 @@ public class TotalCGPAPanelControl {
                     alert.show();
                 }
 
+                else if (cbUniversity.getValue()==null) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("ERROR");
+                    alert.setHeaderText("You didn't select any university");
+                    alert.setContentText("Please select a university");
+                    alert.show();
+                }
+
             }
 
 
@@ -91,9 +109,21 @@ public class TotalCGPAPanelControl {
             alert.show();
         }
 
-
-
-
     }
 
+
+    public void setCbUniversity() {
+
+        String[] uniList = {"EWU","NSU","AIUB","AUST","IUB"};
+        cbUniversity.getItems().setAll(uniList);
+    }
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        setCbUniversity();
+
+    }
 }
