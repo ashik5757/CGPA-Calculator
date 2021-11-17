@@ -126,6 +126,25 @@ public class SemesterCGPAPanelControl implements Initializable {
     private Label lbCredit;
 
     @FXML
+    private ComboBox<String> cbUniversity;
+
+    String university;
+
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+
+
+
+
+
+
+    @FXML
     void addCourse(ActionEvent event) {
 
         if (hBox3.isVisible()==false) {
@@ -324,8 +343,8 @@ public class SemesterCGPAPanelControl implements Initializable {
         if (!tfCourse1.getText().isBlank() && cbCredit1.getValue()!=null && cbGrade1.getValue()!=null &&
             !tfCourse2.getText().isBlank() && cbCredit2.getValue()!=null && cbGrade2.getValue()!=null) {
 
-            Course course1 = new Course(tfCourse1.getText(),cbCredit1.getValue(),cbGrade1.getValue());
-            Course course2 = new Course(tfCourse2.getText(),cbCredit2.getValue(),cbGrade2.getValue());
+            Course course1 = new Course(tfCourse1.getText(),cbCredit1.getValue(),cbGrade1.getValue(),cbUniversity.getValue());
+            Course course2 = new Course(tfCourse2.getText(),cbCredit2.getValue(),cbGrade2.getValue(),cbUniversity.getValue());
 
             cgpa.addCourse(course1);
             cgpa.addCourse(course2);
@@ -348,7 +367,7 @@ public class SemesterCGPAPanelControl implements Initializable {
             }
 
             else {
-                Course course3 = new Course(tfCourse3.getText(),cbCredit3.getValue(),cbGrade3.getValue());
+                Course course3 = new Course(tfCourse3.getText(),cbCredit3.getValue(),cbGrade3.getValue(),cbUniversity.getValue());
                 cgpa.addCourse(course3);
             }
 
@@ -366,7 +385,7 @@ public class SemesterCGPAPanelControl implements Initializable {
             }
 
             else {
-                Course course4 = new Course(tfCourse4.getText(),cbCredit4.getValue(),cbGrade4.getValue());
+                Course course4 = new Course(tfCourse4.getText(),cbCredit4.getValue(),cbGrade4.getValue(),cbUniversity.getValue());
                 cgpa.addCourse(course4);
             }
 
@@ -384,7 +403,7 @@ public class SemesterCGPAPanelControl implements Initializable {
             }
 
             else {
-                Course course5 = new Course(tfCourse5.getText(),cbCredit5.getValue(),cbGrade5.getValue());
+                Course course5 = new Course(tfCourse5.getText(),cbCredit5.getValue(),cbGrade5.getValue(),cbUniversity.getValue());
                 cgpa.addCourse(course5);
             }
 
@@ -402,7 +421,7 @@ public class SemesterCGPAPanelControl implements Initializable {
             }
 
             else {
-                Course course6 = new Course(tfCourse6.getText(),cbCredit6.getValue(),cbGrade6.getValue());
+                Course course6 = new Course(tfCourse6.getText(),cbCredit6.getValue(),cbGrade6.getValue(),cbUniversity.getValue());
                 cgpa.addCourse(course6);
             }
 
@@ -463,11 +482,54 @@ public class SemesterCGPAPanelControl implements Initializable {
 
     }
 
+//    public void setGrade(ComboBox<String> grade) {
+//
+//        String[] gradeList = {"A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"};
+//        grade.getItems().setAll(gradeList);
+//
+//    }
+
     public void setGrade(ComboBox<String> grade) {
 
-        String[] gradeList = {"A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"};
-        grade.getItems().setAll(gradeList);
+        if (cbUniversity.getValue().equals("EWU")) {
+            String[] gradeList = {"A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"};
+            grade.getItems().setAll(gradeList);
+        }
 
+        else if (cbUniversity.getValue().equals("IUB") || cbUniversity.getValue().equals("NSU")) {
+            String[] gradeList = {"A","A-","B+","B","B-","C+","C","C-","D+","D","F"};
+            grade.getItems().setAll(gradeList);
+        }
+
+        else if (cbUniversity.getValue().equals("AIUB")) {
+            String[] gradeList = {"A+","A","B+","B","C+","C","D+","D","F"};
+            grade.getItems().setAll(gradeList);
+        }
+
+        else if (cbUniversity.getValue().equals("AUST")) {
+            String[] gradeList = {"A+","A","A-","B+","B","B-","C+","C","D","F"};
+            grade.getItems().setAll(gradeList);
+        }
+
+    }
+
+    public void setAllGrade() {
+        setGrade(cbGrade1);
+        setGrade(cbGrade2);
+        setGrade(cbGrade3);
+        setGrade(cbGrade4);
+        setGrade(cbGrade5);
+        setGrade(cbGrade6);
+    }
+
+
+
+
+
+    public void setCbUniversity() {
+
+        String[] uniList = {"EWU","NSU","AIUB","AUST","IUB"};
+        cbUniversity.getItems().setAll(uniList);
     }
 
     @Override
@@ -487,12 +549,17 @@ public class SemesterCGPAPanelControl implements Initializable {
         setCbCredit(cbCredit5);
         setCbCredit(cbCredit6);
 
+        setCbUniversity();
+        cbUniversity.getSelectionModel().selectFirst();
+
         setGrade(cbGrade1);
         setGrade(cbGrade2);
         setGrade(cbGrade3);
         setGrade(cbGrade4);
         setGrade(cbGrade5);
         setGrade(cbGrade6);
+
+
 
     }
 }
