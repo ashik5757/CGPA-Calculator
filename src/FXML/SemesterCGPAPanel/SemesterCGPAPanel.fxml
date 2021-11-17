@@ -163,7 +163,7 @@
             <Font name="Candara Bold Italic" size="20.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btCalculate" layoutX="358.0" layoutY="552.0" onAction="#calculate" prefHeight="42.0" prefWidth="168.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247); -fx-background-radius: 20;" text="Calculate" textFill="WHITE">
+      <JFXButton fx:id="btCalculate" layoutX="250.0" layoutY="553.0" onAction="#calculate" prefHeight="42.0" prefWidth="180.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247); -fx-background-radius: 20;" text="Calculate" textFill="WHITE">
          <font>
             <Font name="Candara Bold Italic" size="20.0" />
          </font>
@@ -191,10 +191,11 @@
             </JFXButton>
          </children>
       </GridPane>
-      <JFXButton fx:id="btReset" layoutX="378.0" layoutY="618.0" onAction="#reset" prefHeight="42.0" prefWidth="129.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247); -fx-background-radius: 20;" text="Reset" textFill="WHITE">
+      <JFXButton fx:id="btReset" layoutX="454.0" layoutY="553.0" onAction="#reset" prefHeight="42.0" prefWidth="180.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247); -fx-background-radius: 20;" text="Reset" textFill="WHITE">
          <font>
             <Font name="Candara Bold Italic" size="20.0" />
          </font>
       </JFXButton>
+      <ComboBox fx:id="cbUniversity" layoutX="392.0" layoutY="618.0" onAction="#setAllGrade" prefHeight="42.0" prefWidth="101.0" styleClass="combo-box" stylesheets="@../../CSS/CssStyleSheet.css" />
    </children>
 </AnchorPane>
