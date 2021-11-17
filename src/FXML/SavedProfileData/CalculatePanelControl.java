@@ -4,13 +4,16 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CalculatePanelControl {
+public class CalculatePanelControl implements Initializable {
 
     @FXML
     private JFXButton btSemesterCGPA;
@@ -52,4 +55,23 @@ public class CalculatePanelControl {
         btTotalCGPA.setTextFill(Color.WHITE);
     }
 
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Parent panel = null;
+        try {
+            panel = FXMLLoader.load(getClass().getResource("ProfileSemesterCGPA.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        calculatePanel.getChildren().setAll(panel);
+        btSemesterCGPA.getStyleClass().setAll("button-selected25");
+        btTotalCGPA.getStyleClass().setAll("button-border25");
+        btSemesterCGPA.setTextFill(Color.WHITE);
+        btTotalCGPA.setTextFill(Color.BLACK);
+
+
+    }
 }
