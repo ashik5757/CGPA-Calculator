@@ -1,24 +1,27 @@
 package Class;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Profile {
+public class Profile implements Serializable {
 
     private String name;
     private String university;
+    private String firstSemester;
     private double cgpa;
     private double creditCompleted;
     private ArrayList<Session> sessionList;
 
     public Profile() {
-        this.sessionList = new ArrayList<Session>();
+        //this.sessionList = new ArrayList<Session>();
     }
 
-    public Profile(String name, String university, double cgpa, double creditCompleted) {
+    public Profile(String name, String university, String firstSemester) {
         this.name = name;
         this.university = university;
-        this.cgpa = cgpa;
-        this.creditCompleted = creditCompleted;
+        this.firstSemester = firstSemester;
+        this.cgpa = 0;
+        this.creditCompleted = 0;
         this.sessionList = new ArrayList<Session>();
     }
 
@@ -36,6 +39,14 @@ public class Profile {
 
     public void setUniversity(String university) {
         this.university = university;
+    }
+
+    public String getFirstSemester() {
+        return firstSemester;
+    }
+
+    public void setFirstSemester(String firstSemester) {
+        this.firstSemester = firstSemester;
     }
 
     public double getCgpa() {
