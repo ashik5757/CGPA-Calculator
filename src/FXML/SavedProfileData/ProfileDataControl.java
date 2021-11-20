@@ -1,14 +1,22 @@
 package FXML.SavedProfileData;
 
+import Class.*;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
-public class ProfileDataControl {
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ProfileDataControl implements Initializable {
 
     @FXML
     private JFXButton btExit;
@@ -81,6 +89,20 @@ public class ProfileDataControl {
 
     @FXML
     private Label lbUniversity;
+
+
+    private Profile profile;
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
+
+
 
     @FXML
     void exit(ActionEvent event) {
@@ -240,4 +262,35 @@ public class ProfileDataControl {
 
 
 
+    public void reader() throws IOException, ClassNotFoundException {
+
+        FileInputStream fileRead = new FileInputStream("/CGPA-Calculator/data/DataList.txt");
+        ObjectInputStream objRead = new ObjectInputStream(fileRead);
+
+        DataList dataList = (DataList) objRead.readObject();
+        setProfile(dataList.getCurrentProfile());
+
+
+        fileRead.close();
+        objRead.close();
+
+    }
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        try {
+            reader();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        lbName.setText("Name : " + profile.getName());
+        lbUniversity.setText("University : " + profile.getUniversity());
+        lbCGPA.setText("CGPA : " + profile.getCgpa());
+        lbCredit.setText("Credit Completed : " + profile.getCreditCompleted());
+
+    }
 }

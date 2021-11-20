@@ -1,5 +1,6 @@
 package FXML.SavedProfileData;
 
+import Class.*;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,6 +29,16 @@ public class ProfilePanelControl implements Initializable {
 
     @FXML
     private AnchorPane mainPanel;
+
+    private Profile profile;
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
 
 
     @FXML
@@ -62,12 +73,18 @@ public class ProfilePanelControl implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfileData.fxml"));
         Parent panel = null;
         try {
-            panel = FXMLLoader.load(getClass().getResource("ProfileData.fxml"));
+            panel = loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+//        ProfileDataControl profileDataControl = loader.getController();
+//        profileDataControl.setProfile(profile);
+
         mainPanel.getChildren().setAll(panel);
+
     }
 }
