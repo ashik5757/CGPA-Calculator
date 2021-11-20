@@ -5,7 +5,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import Class.*;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class LaunchApp extends Application {
 
@@ -19,6 +26,8 @@ public class LaunchApp extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/Homepage2.fxml"));
         Parent root = loader.load();
 
+        createPath();
+
         primaryStage.setTitle("CGPA Calculator");
         primaryStage.setScene(new Scene(root));
         //primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -27,4 +36,72 @@ public class LaunchApp extends Application {
 
 
     }
+
+
+
+
+    public void createPath() throws IOException {
+
+//        Path path = Paths.get("/CGPA-Calculator/data/Profile/");
+//        Path path2 = Paths.get("/CGPA-Calculator/data/Session/");
+//
+//        if (!Files.isDirectory(path)) {
+//            Files.createDirectories(path);
+//        }
+//
+//        if (!Files.isDirectory(path2)) {
+//            Files.createDirectories(path2);
+//        }
+//
+//        File file = new File("/CGPA-Calculator/data/CurrentProfile.txt");
+//        if (!file.exists()) {
+//            file.createNewFile();
+//        }
+//
+//        File file2 = new File("/CGPA-Calculator/data/ProfileList.txt");
+//        if (!file2.exists()) {
+//            file2.createNewFile();
+//        }
+
+//        File dataFile = new File("/CGPA-Calculator/data/DataList.txt");
+//        if (!dataFile.exists()) {
+//
+//            DataList dataList = new DataList();
+//            createDataList(dataList);
+//
+//        }
+
+
+        Path path = Paths.get("/CGPA-Calculator/data/");
+
+        if (!Files.isDirectory(path)) {
+            Files.createDirectories(path);
+        }
+
+
+
+
+
+
+
+    }
+
+
+    public void createDataList(Object dataList) throws IOException{
+
+        FileOutputStream fileOut = new FileOutputStream("/CGPA-Calculator/data/DataList.txt");
+        ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
+
+
+        objOut.writeObject(dataList);
+        fileOut.close();
+        objOut.flush();
+        objOut.close();
+
+
+    }
+
+
+
+
 }
