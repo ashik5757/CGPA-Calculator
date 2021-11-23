@@ -1,9 +1,10 @@
 package Class;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.*;
 
-public class CGPA {
+public class CGPA implements Serializable {
 
     private double currentCGPA;
     private double currentCredit;
@@ -103,4 +104,17 @@ public class CGPA {
         courseList.remove(index);
     }
 
+    @Override
+    public String toString() {
+
+        StringBuilder msg = new StringBuilder("     Course name          Credit          Grade Point           Letter Grade      " +
+                "\n----------------------------------------------------------------------------------------------");;
+
+        for (Course course : courseList) {
+            msg.append(course.toString());
+        }
+
+
+        return msg.toString();
+    }
 }
