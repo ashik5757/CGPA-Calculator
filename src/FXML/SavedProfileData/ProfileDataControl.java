@@ -3,12 +3,20 @@ package FXML.SavedProfileData;
 import Class.*;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
+import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -110,20 +118,19 @@ public class ProfileDataControl implements Initializable {
     }
 
     @FXML
-    void session1(ActionEvent event) {
+    void session1(ActionEvent event) throws IOException {
 
         if (bt2.isVisible()) {
+            String msg = profile.getSessionList().get(0).getCgpaClass().toString()+"";
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("LAlal");
-            alert.setContentText("hgdahdg");
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
             alert.show();
         }
 
         if (!bt2.isVisible()) {
-            bt1.setText("Session : Fall-20 \nCredit completed : 10.5 \nCGPA : 3.60");
-            bt1.setContentDisplay(ContentDisplay.valueOf("CENTER"));
-            bt1.setGraphic(null);
-            bt2.setVisible(true);
+            loadCalculatePanel(event);
         }
 
 
@@ -131,60 +138,57 @@ public class ProfileDataControl implements Initializable {
     }
 
     @FXML
-    void session2(ActionEvent event) {
+    void session2(ActionEvent event) throws IOException {
 
         if (bt3.isVisible()) {
+            String msg = profile.getSessionList().get(1).getCgpaClass().toString()+"";
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("LAlal");
-            alert.setContentText("hgdahdg");
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
             alert.show();
         }
 
         if (!bt3.isVisible()) {
-            bt2.setText("Session : Fall-20 \nCredit completed : 10.5 \nCGPA : 3.60");
-            bt2.setContentDisplay(ContentDisplay.valueOf("CENTER"));
-            bt2.setGraphic(null);
-            bt3.setVisible(true);
+            loadCalculatePanel(event);
         }
 
 
     }
 
     @FXML
-    void session3(ActionEvent event) {
+    void session3(ActionEvent event) throws IOException {
 
         if (bt4.isVisible()) {
+            String msg = profile.getSessionList().get(2).getCgpaClass().toString()+"";
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("LAlal");
-            alert.setContentText("hgdahdg");
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
             alert.show();
         }
 
         if (!bt4.isVisible()) {
-            bt3.setText("Session : Fall-20 \nCredit completed : 10.5 \nCGPA : 3.60");
-            bt3.setContentDisplay(ContentDisplay.valueOf("CENTER"));
-            bt3.setGraphic(null);
-            bt4.setVisible(true);
+            loadCalculatePanel(event);
         }
 
 
     }
 
     @FXML
-    void session4(ActionEvent event) {
+    void session4(ActionEvent event) throws IOException {
 
         if (bt5.isVisible()) {
+            String msg = profile.getSessionList().get(3).getCgpaClass().toString()+"";
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("LAlal");
-            alert.setContentText("hgdahdg");
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
             alert.show();
         }
 
         if (!bt5.isVisible()) {
-            bt4.setText("Session : Fall-20 \nCredit completed : 10.5 \nCGPA : 3.60");
-            bt4.setContentDisplay(ContentDisplay.valueOf("CENTER"));
-            bt4.setGraphic(null);
-            bt5.setVisible(true);
+            loadCalculatePanel(event);
         }
 
 
@@ -261,6 +265,19 @@ public class ProfileDataControl implements Initializable {
     }
 
 
+    public void loadCalculatePanel(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../SavedProfileData/ProfilePanel.fxml"));
+        Parent root = loader.load();
+
+        ProfilePanelControl profilePanelControl = loader.getController();
+        profilePanelControl.calculate(event);
+
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
 
     public void reader() throws IOException, ClassNotFoundException {
 
@@ -278,6 +295,12 @@ public class ProfileDataControl implements Initializable {
 
 
 
+    public void sessionText(JFXButton button, Session session) {
+        button.setText("Session : Fall-20 \nCredit completed : "+session.getCreditCompleted()+" \nCGPA : " + session.getCgpa());
+    }
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -291,6 +314,145 @@ public class ProfileDataControl implements Initializable {
         lbUniversity.setText("University : " + profile.getUniversity());
         lbCGPA.setText("CGPA : " + profile.getCgpa());
         lbCredit.setText("Credit Completed : " + profile.getCreditCompleted());
+
+
+
+        int i = 1;
+
+        for (Session session : profile.getSessionList()) {
+            if (i==1) {
+                sessionText(bt1,session);
+                i++;
+                bt1.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt1.setGraphic(null);
+                bt2.setVisible(true);
+            }
+            else if (i==2) {
+                sessionText(bt2,session);
+                i++;
+                bt2.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt2.setGraphic(null);
+                bt3.setVisible(true);
+            }
+            else if (i==3) {
+                sessionText(bt3,session);
+                i++;
+                bt3.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt3.setGraphic(null);
+                bt4.setVisible(true);
+            }
+            else if (i==4) {
+                sessionText(bt4,session);
+                i++;
+                bt4.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt4.setGraphic(null);
+                bt5.setVisible(true);
+            }
+            else if (i==5) {
+                sessionText(bt5,session);
+                i++;
+                bt5.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt5.setGraphic(null);
+                bt6.setVisible(true);
+            }
+            else if (i==6) {
+                sessionText(bt6,session);
+                i++;
+                bt6.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt6.setGraphic(null);
+                bt7.setVisible(true);
+            }
+            else if (i==7) {
+                sessionText(bt7,session);
+                i++;
+                bt7.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt7.setGraphic(null);
+                bt8.setVisible(true);
+            }
+            else if (i==8) {
+                sessionText(bt8,session);
+                i++;
+                bt8.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt8.setGraphic(null);
+                bt9.setVisible(true);
+            }
+            else if (i==9) {
+                sessionText(bt9,session);
+                i++;
+                bt9.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt9.setGraphic(null);
+                bt10.setVisible(true);
+            }
+            else if (i==10) {
+                sessionText(bt10,session);
+                i++;
+                bt10.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt10.setGraphic(null);
+                bt11.setVisible(true);
+            }
+            else if (i==11) {
+                sessionText(bt11,session);
+                i++;
+                bt11.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt11.setGraphic(null);
+                bt12.setVisible(true);
+            }
+            else if (i==12) {
+                sessionText(bt12,session);
+                i++;
+                bt12.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt12.setGraphic(null);
+                bt13.setVisible(true);
+            }
+            else if (i==13) {
+                sessionText(bt13,session);
+                i++;
+                bt13.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt13.setGraphic(null);
+                bt14.setVisible(true);
+            }
+            else if (i==14) {
+                sessionText(bt14,session);
+                i++;
+                bt14.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt14.setGraphic(null);
+                bt15.setVisible(true);
+            }
+            else if (i==15) {
+                sessionText(bt15,session);
+                i++;
+                bt15.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt15.setGraphic(null);
+                bt16.setVisible(true);
+            }
+            else if (i==16) {
+                sessionText(bt16,session);
+                i++;
+                bt16.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt16.setGraphic(null);
+                bt17.setVisible(true);
+            }
+            else if (i==17) {
+                sessionText(bt17,session);
+                i++;
+                bt17.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt17.setGraphic(null);
+                bt18.setVisible(true);
+            }
+            else if (i==18) {
+                sessionText(bt18,session);
+                i++;
+                bt18.setContentDisplay(ContentDisplay.valueOf("CENTER"));
+                bt18.setGraphic(null);
+            }
+
+        }
+
+
+
+
+
+
 
     }
 }
