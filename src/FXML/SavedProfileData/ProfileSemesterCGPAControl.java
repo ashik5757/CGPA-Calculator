@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -109,6 +110,11 @@ public class ProfileSemesterCGPAControl implements Initializable{
 
     @FXML
     private JFXButton btAddProfile;
+
+    private DataList dataList;
+    private CGPA cgpaClass;
+    private double tempCGPA;
+    private double tempCredit;
 
     @FXML
     void addCourse(ActionEvent event) {
@@ -388,15 +394,48 @@ public class ProfileSemesterCGPAControl implements Initializable{
         if (textError==0 && creditError==0 && gradeError==0) {
             lbCGPA.setText("CGPA : " + cgpa.getCalculatedCGPA());
             lbCredit.setText("Total Credit : " + cgpa.getTotalCredit());
+
+//            tempCGPA = cgpa.getCalculatedCGPA();
+//            tempCredit = cgpa.getTotalCredit();
+            cgpaClass = cgpa;
+            btAddProfile.setDisable(false);
         }
 
+    }
+
+
+    @FXML
+    void addToProfile(ActionEvent event) throws IOException {
+
+        Session session = new Session("a",cgpaClass);
+        dataList.getCurrentProfile().addSession(session);
+        createDataList(dataList);
 
 
     }
 
-    @FXML
-    void addToProfile(ActionEvent event) {
+    public void createDataList(Object dataList) throws IOException {
 
+        FileOutputStream fileOut = new FileOutputStream("/CGPA-Calculator/data/DataList.txt");
+        ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
+
+        objOut.writeObject(dataList);
+        fileOut.close();
+        objOut.flush();
+        objOut.close();
+
+
+    }
+
+    public void setDataList() throws IOException, ClassNotFoundException {
+
+        FileInputStream fileRead = new FileInputStream("/CGPA-Calculator/data/DataList.txt");
+        ObjectInputStream objRead = new ObjectInputStream(fileRead);
+
+        dataList = (DataList) objRead.readObject();
+
+        fileRead.close();
+        objRead.close();
     }
 
 
@@ -417,6 +456,12 @@ public class ProfileSemesterCGPAControl implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        try {
+            setDataList();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         setCbCredit(cbCredit1);
         setCbCredit(cbCredit2);
