@@ -44,8 +44,21 @@ public class NewProfilePanelControl implements Initializable {
     @FXML
     void createProfile(ActionEvent event) throws IOException, ClassNotFoundException {
 
-        Profile profile = new Profile(tfName.getText(),cbUniversity.getValue(),cbSession.getValue()+"-"+cbYear.getValue());
-        addProfile(profile);
+        File dataFile = new File("/CGPA-Calculator/data/DataList.txt");
+        Profile profile;
+
+        if (!dataFile.exists()) {
+            profile = new Profile(tfName.getText(),cbUniversity.getValue(),cbSession.getValue()+"-"+cbYear.getValue());
+            addProfile(profile);
+        }
+
+        else if (dataFile.exists())  {
+            profile = new Profile(profileName(tfName.getText()),cbUniversity.getValue(),cbSession.getValue()+"-"+cbYear.getValue());
+            addProfile(profile);
+        }
+
+
+
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../SavedProfileData/ProfilePanel.fxml"));
         Parent root = loader.load();
@@ -60,8 +73,8 @@ public class NewProfilePanelControl implements Initializable {
 
     public void addProfile(Profile profile) throws IOException, ClassNotFoundException {
 
-
         File dataFile = new File("/CGPA-Calculator/data/DataList.txt");
+
         if (!dataFile.exists()) {
 
             DataList dataList = new DataList(profile);
@@ -71,7 +84,6 @@ public class NewProfilePanelControl implements Initializable {
         }
 
         else if (dataFile.exists()) {       // check at first launch , if it is work or not
-
 
             FileInputStream fileRead = new FileInputStream("/CGPA-Calculator/data/DataList.txt");
             ObjectInputStream objRead = new ObjectInputStream(fileRead);
@@ -86,10 +98,10 @@ public class NewProfilePanelControl implements Initializable {
             objRead.close();
         }
 
-
-
-
     }
+
+
+
 
     public void createDataList(Object dataList) throws IOException{
 
@@ -109,6 +121,30 @@ public class NewProfilePanelControl implements Initializable {
 
 
 
+    public String profileName(String name) throws IOException, ClassNotFoundException {
+
+        FileInputStream fileRead = new FileInputStream("/CGPA-Calculator/data/DataList.txt");
+        ObjectInputStream objRead = new ObjectInputStream(fileRead);
+
+        DataList dataList = (DataList) objRead.readObject();
+
+        int i = 1;
+        String tempName = name;
+
+        for (Profile profile : dataList.getProfileList()) {
+            if (profile.getName().equals(name)) {
+                name = tempName + "_" + i;
+                i++;
+            }
+        }
+
+        fileRead.close();
+        objRead.close();
+
+
+        return name;
+
+    }
 
 
 
