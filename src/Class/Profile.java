@@ -13,7 +13,7 @@ public class Profile implements Serializable {
     private ArrayList<Session> sessionList;
 
     public Profile() {
-        //this.sessionList = new ArrayList<Session>();
+        this.sessionList = new ArrayList<Session>();
     }
 
     public Profile(String name, String university, String firstSemester) {
