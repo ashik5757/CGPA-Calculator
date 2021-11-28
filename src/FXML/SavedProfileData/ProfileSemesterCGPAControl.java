@@ -5,10 +5,7 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
@@ -195,19 +192,20 @@ public class ProfileSemesterCGPAControl implements Initializable{
     @FXML
     void reset(ActionEvent event) {
 
-        setCbCredit(cbCredit1);
-        setCbCredit(cbCredit2);
-        setCbCredit(cbCredit3);
-        setCbCredit(cbCredit4);
-        setCbCredit(cbCredit5);
-        setCbCredit(cbCredit6);
+//        setCbCredit(cbCredit1);
+//        setCbCredit(cbCredit2);
+//        setCbCredit(cbCredit3);
+//        setCbCredit(cbCredit4);
+//        setCbCredit(cbCredit5);
+//        setCbCredit(cbCredit6);
+//
+//        setGrade(cbGrade1);
+//        setGrade(cbGrade2);
+//        setGrade(cbGrade3);
+//        setGrade(cbGrade4);
+//        setGrade(cbGrade5);
+//        setGrade(cbGrade6);
 
-        setGrade(cbGrade1);
-        setGrade(cbGrade2);
-        setGrade(cbGrade3);
-        setGrade(cbGrade4);
-        setGrade(cbGrade5);
-        setGrade(cbGrade6);
 
 
         tfCourse1.setText("");
@@ -217,37 +215,66 @@ public class ProfileSemesterCGPAControl implements Initializable{
         tfCourse5.setText("");
         tfCourse6.setText("");
 
-        cbCredit1.getSelectionModel().select(-1);
-        cbCredit2.getSelectionModel().select(-1);
-        cbCredit3.getSelectionModel().select(-1);
-        cbCredit4.getSelectionModel().select(-1);
-        cbCredit5.getSelectionModel().select(-1);
-        cbCredit6.getSelectionModel().select(-1);
+        creditReset(cbCredit1);
+        creditReset(cbCredit2);
+        creditReset(cbCredit3);
+        creditReset(cbCredit4);
+        creditReset(cbCredit5);
+        creditReset(cbCredit6);
 
-        cbCredit1.setPromptText("Credit");
-        cbCredit2.setPromptText("Credit");
-        cbCredit3.setPromptText("Credit");
-        cbCredit4.setPromptText("Credit");
-        cbCredit5.setPromptText("Credit");
-        cbCredit6.setPromptText("Credit");
+        gradeReset(cbGrade1);
+        gradeReset(cbGrade2);
+        gradeReset(cbGrade3);
+        gradeReset(cbGrade4);
+        gradeReset(cbGrade5);
+        gradeReset(cbGrade6);
 
 
-        cbGrade1.getSelectionModel().select(-1);
-        cbGrade2.getSelectionModel().select(-1);
-        cbGrade3.getSelectionModel().select(-1);
-        cbGrade4.getSelectionModel().select(-1);
-        cbGrade5.getSelectionModel().select(-1);
-        cbGrade6.getSelectionModel().select(-1);
 
-        cbGrade1.setPromptText("Grade");
-        cbGrade2.setPromptText("Grade");
-        cbGrade3.setPromptText("Grade");
-        cbGrade4.setPromptText("Grade");
-        cbGrade5.setPromptText("Grade");
-        cbGrade6.setPromptText("Grade");
-
+        lbCGPA.setText("CGPA : " + 0.0);
+        lbCredit.setText("Total Credit : " + 0.0);
 
     }
+
+
+    public void gradeReset(ComboBox<String> grade) {
+
+        grade.getSelectionModel().clearSelection();
+
+        grade.setButtonCell(new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText("Grade");
+                } else {
+                    setText(item);
+                }
+            }
+        });
+    }
+
+
+    public void creditReset(ComboBox<Double> credit) {
+
+        credit.getSelectionModel().clearSelection();
+
+        credit.setButtonCell(new ListCell<Double>() {
+            @Override
+            protected void updateItem(Double item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == -1) {
+                    setText("Credit");
+                } else {
+                    setText(String.valueOf(item));
+                }
+            }
+        });
+    }
+
+
+
+
 
     @FXML
     void calculate(ActionEvent event) {
@@ -395,8 +422,6 @@ public class ProfileSemesterCGPAControl implements Initializable{
             lbCGPA.setText("CGPA : " + cgpa.getCalculatedCGPA());
             lbCredit.setText("Total Credit : " + cgpa.getTotalCredit());
 
-//            tempCGPA = cgpa.getCalculatedCGPA();
-//            tempCredit = cgpa.getTotalCredit();
             cgpaClass = cgpa;
             btAddProfile.setDisable(false);
         }
@@ -407,9 +432,29 @@ public class ProfileSemesterCGPAControl implements Initializable{
     @FXML
     void addToProfile(ActionEvent event) throws IOException {
 
-        Session session = new Session("a",cgpaClass);
-        dataList.getCurrentProfile().addSession(session);
-        createDataList(dataList);
+        cgpaClass.setCurrentCGPA(dataList.getCurrentProfile().getCgpa());
+        cgpaClass.setCurrentCredit(dataList.getCurrentProfile().getCreditCompleted());
+
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Add to PROFILE");
+        alert.setHeaderText("After add to profile, \n\t\t Your total CGPA will be " + cgpaClass.getCalculatedCGPA() +
+                                                  "\n\t\t And total credit will be " + cgpaClass.getTotalCredit());
+        alert.setContentText("Are you sure...??");
+
+        if (alert.showAndWait().get().equals(ButtonType.OK)) {
+
+            Session session = new Session(sessionName(),cgpaClass);
+            dataList.getCurrentProfile().addSession(session);
+            dataList.getCurrentProfile().setCgpa(cgpaClass.getCalculatedCGPA());
+            dataList.getCurrentProfile().setCreditCompleted(cgpaClass.getTotalCredit());
+            createDataList(dataList);
+
+            reset(event);
+            btAddProfile.setDisable(true);
+        }
+
+
 
 
     }
@@ -426,6 +471,191 @@ public class ProfileSemesterCGPAControl implements Initializable{
 
 
     }
+
+    public void createName(String session, int year) {
+
+        if (dataList.getCurrentProfile().getUniversity().equals("EWU")) {
+
+            if (session.equals("Spring"))
+                dataList.getCurrentProfile().setSession("Summer");
+
+            else if (session.equals("Summer"))
+                dataList.getCurrentProfile().setSession("Fall");
+
+            else if (session.equals("Fall")) {
+                dataList.getCurrentProfile().setSession("Spring");
+                dataList.getCurrentProfile().setYear(year+1);
+            }
+
+        }
+
+        else if (dataList.getCurrentProfile().getUniversity().equals("NSU")) {
+
+            if (session.equals("Spring"))
+                dataList.getCurrentProfile().setSession("Summer");
+
+            else if (session.equals("Summer"))
+                dataList.getCurrentProfile().setSession("Fall");
+
+            else if (session.equals("Fall")) {
+                dataList.getCurrentProfile().setSession("Spring");
+                dataList.getCurrentProfile().setYear(year+1);
+            }
+
+        }
+
+        else if (dataList.getCurrentProfile().getUniversity().equals("AIUB")) {
+
+            if (session.equals("Spring"))
+                dataList.getCurrentProfile().setSession("Summer");
+
+            else if (session.equals("Summer"))
+                dataList.getCurrentProfile().setSession("Fall");
+
+            else if (session.equals("Fall")) {
+                dataList.getCurrentProfile().setSession("Spring");
+                dataList.getCurrentProfile().setYear(year+1);
+            }
+
+        }
+
+        else if (dataList.getCurrentProfile().getUniversity().equals("AUST")) {
+
+            if (session.equals("Fall"))
+                dataList.getCurrentProfile().setSession("Spring");
+
+            else if (session.equals("Spring")) {
+                dataList.getCurrentProfile().setSession("Fall");
+                dataList.getCurrentProfile().setYear(year+1);
+            }
+
+        }
+
+        else if (dataList.getCurrentProfile().getUniversity().equals("IUB")) {
+
+            if (session.equals("Spring"))
+                dataList.getCurrentProfile().setSession("Summer");
+
+            else if (session.equals("Summer"))
+                dataList.getCurrentProfile().setSession("Fall");
+
+            else if (session.equals("Fall")) {
+                dataList.getCurrentProfile().setSession("Spring");
+                dataList.getCurrentProfile().setYear(year+1);
+            }
+
+        }
+
+
+
+    }
+
+
+
+
+
+    public String sessionName() {
+
+        String name = "";
+
+        if (dataList.getCurrentProfile().getSessionList().size()==0) {
+            name = dataList.getCurrentProfile().getFirstSemester();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==1) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==2) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==3) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==4) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==5) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==6) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==7) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==8) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==9) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==10) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==11) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==12) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==13) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==14) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==15) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==16) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==17) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+        else if (dataList.getCurrentProfile().getSessionList().size()==18) {
+            createName(dataList.getCurrentProfile().getSession(), dataList.getCurrentProfile().getYear());
+            name = dataList.getCurrentProfile().getSession() +"-"+ dataList.getCurrentProfile().getYear();
+        }
+
+
+        return name;
+    }
+
 
     public void setDataList() throws IOException, ClassNotFoundException {
 
