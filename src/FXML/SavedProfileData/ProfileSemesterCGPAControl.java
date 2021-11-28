@@ -679,8 +679,25 @@ public class ProfileSemesterCGPAControl implements Initializable{
 
     public void setGrade(ComboBox<String> grade) {
 
-        String[] gradeList = {"A","A-","B+","B","B-","C+","C","C-","D+","D","F"};
-        grade.getItems().setAll(gradeList);
+        if (dataList.getCurrentProfile().getUniversity().equals("EWU")) {
+            String[] gradeList = {"A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"};
+            grade.getItems().setAll(gradeList);
+        }
+
+        else if (dataList.getCurrentProfile().getUniversity().equals("IUB") || dataList.getCurrentProfile().getUniversity().equals("NSU")) {
+            String[] gradeList = {"A","A-","B+","B","B-","C+","C","C-","D+","D","F"};
+            grade.getItems().setAll(gradeList);
+        }
+
+        else if (dataList.getCurrentProfile().getUniversity().equals("AIUB")) {
+            String[] gradeList = {"A+","A","B+","B","C+","C","D+","D","F"};
+            grade.getItems().setAll(gradeList);
+        }
+
+        else if (dataList.getCurrentProfile().getUniversity().equals("AUST")) {
+            String[] gradeList = {"A+","A","A-","B+","B","B-","C+","C","D","F"};
+            grade.getItems().setAll(gradeList);
+        }
 
     }
 
