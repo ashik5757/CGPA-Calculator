@@ -48,12 +48,12 @@ public class NewProfilePanelControl implements Initializable {
         Profile profile;
 
         if (!dataFile.exists()) {
-            profile = new Profile(tfName.getText(),cbUniversity.getValue(),cbSession.getValue()+"-"+cbYear.getValue());
+            profile = new Profile(tfName.getText(),cbUniversity.getValue(),cbSession.getValue(),cbYear.getValue());
             addProfile(profile);
         }
 
         else if (dataFile.exists())  {
-            profile = new Profile(profileName(tfName.getText()),cbUniversity.getValue(),cbSession.getValue()+"-"+cbYear.getValue());
+            profile = new Profile(profileName(tfName.getText()),cbUniversity.getValue(),cbSession.getValue(),cbYear.getValue());
             addProfile(profile);
         }
 
