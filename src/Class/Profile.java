@@ -8,6 +8,8 @@ public class Profile implements Serializable {
     private String name;
     private String university;
     private String firstSemester;
+    private String session;
+    private int year;
     private double cgpa;
     private double creditCompleted;
     private ArrayList<Session> sessionList;
@@ -16,10 +18,12 @@ public class Profile implements Serializable {
         this.sessionList = new ArrayList<Session>();
     }
 
-    public Profile(String name, String university, String firstSemester) {
+    public Profile(String name, String university, String session, int year) {
         this.name = name;
         this.university = university;
-        this.firstSemester = firstSemester;
+        this.session = session;
+        this.year = year;
+        this.firstSemester = this.session +"-"+ this.year;
         this.cgpa = 0;
         this.creditCompleted = 0;
         this.sessionList = new ArrayList<Session>();
@@ -47,6 +51,22 @@ public class Profile implements Serializable {
 
     public void setFirstSemester(String firstSemester) {
         this.firstSemester = firstSemester;
+    }
+
+    public String getSession() {
+        return session;
+    }
+
+    public void setSession(String session) {
+        this.session = session;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public double getCgpa() {
