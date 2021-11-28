@@ -195,73 +195,245 @@ public class ProfileDataControl implements Initializable {
     }
 
     @FXML
-    void session5(ActionEvent event) {
+    void session5(ActionEvent event) throws IOException {
+
+        if (bt6.isVisible()) {
+            String msg = profile.getSessionList().get(4).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt6.isVisible()) {
+            loadCalculatePanel(event);
+        }
+
 
     }
 
     @FXML
-    void session6(ActionEvent event) {
+    void session6(ActionEvent event) throws IOException {
+
+        if (bt7.isVisible()) {
+            String msg = profile.getSessionList().get(5).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt7.isVisible()) {
+            loadCalculatePanel(event);
+        }
+
 
     }
 
     @FXML
-    void session7(ActionEvent event) {
+    void session7(ActionEvent event) throws IOException {
 
+        if (bt8.isVisible()) {
+            String msg = profile.getSessionList().get(6).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt8.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session8(ActionEvent event) {
+    void session8(ActionEvent event) throws IOException {
 
+        if (bt9.isVisible()) {
+            String msg = profile.getSessionList().get(7).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt9.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session9(ActionEvent event) {
+    void session9(ActionEvent event) throws IOException {
 
+        if (bt10.isVisible()) {
+            String msg = profile.getSessionList().get(8).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt10.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session10(ActionEvent event) {
+    void session10(ActionEvent event) throws IOException {
 
+        if (bt11.isVisible()) {
+            String msg = profile.getSessionList().get(9).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt11.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session11(ActionEvent event) {
+    void session11(ActionEvent event) throws IOException {
 
+        if (bt12.isVisible()) {
+            String msg = profile.getSessionList().get(10).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt12.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session12(ActionEvent event) {
+    void session12(ActionEvent event) throws IOException {
 
+        if (bt13.isVisible()) {
+            String msg = profile.getSessionList().get(11).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt13.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session13(ActionEvent event) {
+    void session13(ActionEvent event) throws IOException {
 
+        if (bt14.isVisible()) {
+            String msg = profile.getSessionList().get(12).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt4.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session14(ActionEvent event) {
+    void session14(ActionEvent event) throws IOException {
 
+        if (bt15.isVisible()) {
+            String msg = profile.getSessionList().get(13).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt15.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session15(ActionEvent event) {
+    void session15(ActionEvent event) throws IOException {
 
+        if (bt16.isVisible()) {
+            String msg = profile.getSessionList().get(14).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt16.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session16(ActionEvent event) {
+    void session16(ActionEvent event) throws IOException {
 
+        if (bt17.isVisible()) {
+            String msg = profile.getSessionList().get(15).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt17.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session17(ActionEvent event) {
+    void session17(ActionEvent event) throws IOException {
 
+        if (bt18.isVisible()) {
+            String msg = profile.getSessionList().get(16).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!bt18.isVisible()) {
+            loadCalculatePanel(event);
+        }
     }
 
     @FXML
-    void session18(ActionEvent event) {
+    void session18(ActionEvent event) throws IOException {
 
+        if (bt18.getGraphic() ==null) {
+            String msg = profile.getSessionList().get(17).getCgpaClass().toString()+"";
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Course Wise Grade-Sheet");
+            alert.setContentText(msg);
+            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
+            alert.show();
+        }
+
+        if (!(bt18.getGraphic() ==null)) {
+            loadCalculatePanel(event);
+        }
     }
 
 
@@ -296,7 +468,7 @@ public class ProfileDataControl implements Initializable {
 
 
     public void sessionText(JFXButton button, Session session) {
-        button.setText("Session : Fall-20 \nCredit completed : "+session.getCreditCompleted()+" \nCGPA : " + session.getCgpa());
+        button.setText("Session : " + session.getName() + "\nCredit completed : "+session.getCreditCompleted()+ "\nCGPA : " + session.getCgpa());
     }
 
 
