@@ -56,6 +56,23 @@ public class CGPA implements Serializable {
         return Double.parseDouble(twoPoint.format(calculatedCGPA));
     }
 
+    public double getTermCGPA() {
+
+        double totalGP = 0.0;
+        double termCGPA;
+
+
+        for (Course course : courseList) {
+            totalGP += course.getCredit()*course.getGrade();
+        }
+
+        //totalGP += currentCGPA*currentCredit;
+
+        termCGPA = totalGP/getTermCredit();
+
+        return Double.parseDouble(twoPoint.format(termCGPA));
+    }
+
 //    public void setCalculatedCGPA(double calculatedCGPA) {
 //        this.calculatedCGPA = calculatedCGPA;
 //    }
@@ -69,6 +86,17 @@ public class CGPA implements Serializable {
         }
 
         return totalCredit;
+    }
+
+    public double getTermCredit() {
+
+        double termCredit = 0.0;
+
+        for (Course course : courseList) {
+            termCredit += course.getCredit();
+        }
+
+        return termCredit;
     }
 
 //    public void setTotalCredit(double totalCredit) {
@@ -108,12 +136,13 @@ public class CGPA implements Serializable {
     public String toString() {
 
         StringBuilder msg = new StringBuilder("     Course name          Credit          Grade Point           Letter Grade      " +
-                "\n----------------------------------------------------------------------------------------------");;
+                "\n----------------------------------------------------------------------------------------------");
 
         for (Course course : courseList) {
             msg.append(course.toString());
         }
 
+        msg.append("\n\n Term CGPA : " + getTermCGPA() + "        Credit : " + getTermCredit());
 
         return msg.toString();
     }
