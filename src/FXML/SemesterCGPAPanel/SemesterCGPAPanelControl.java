@@ -1,6 +1,7 @@
 package FXML.SemesterCGPAPanel;
 
 import Class.*;
+import com.jfoenix.controls.JFXAutoCompletePopup;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,8 +9,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.controlsfx.control.textfield.TextFields;
 
+import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SemesterCGPAPanelControl implements Initializable {
@@ -534,6 +539,50 @@ public class SemesterCGPAPanelControl implements Initializable {
 
 
 
+    public ArrayList<String> getCourseName() throws IOException {
+
+        ArrayList<String> list = new ArrayList<>();
+
+        InputStream in = new FileInputStream("CourseName.txt");
+        //InputStream in = getClass().getResourceAsStream("/CourseName.txt");
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+
+        String line;
+
+        while ((line=reader.readLine())!=null) {
+            list.add(line);
+        }
+
+        in.close();
+        reader.close();
+
+
+        return list;
+    }
+
+
+
+    public void popUpStyle(TextField textField, ArrayList<String> list) throws FileNotFoundException {
+
+
+        AutoCompletionBinding<String> autoComplete = TextFields.bindAutoCompletion(textField,list);
+        autoComplete.setPrefWidth(textField.getPrefWidth());
+        autoComplete.getAutoCompletionPopup().setStyle(
+//                "-fx-font-family :  Candara;" +
+                        "-fx-font-style :  italic;" +
+                        "-fx-font-weight : BOLD;" +
+                        "-fx-font-size : 16"
+        );
+
+    }
+
+
+
+
+
+
+
 
 
     public void setCbUniversity() {
@@ -551,6 +600,20 @@ public class SemesterCGPAPanelControl implements Initializable {
 //        setCbCourse(cbCourse4);
 //        setCbCourse(cbCourse5);
 //        setCbCourse(cbCourse6);
+
+
+        try {
+            popUpStyle(tfCourse1,getCourseName());
+            popUpStyle(tfCourse2,getCourseName());
+            popUpStyle(tfCourse3,getCourseName());
+            popUpStyle(tfCourse4,getCourseName());
+            popUpStyle(tfCourse5,getCourseName());
+            popUpStyle(tfCourse6,getCourseName());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
         setCbCredit(cbCredit1);
         setCbCredit(cbCredit2);
