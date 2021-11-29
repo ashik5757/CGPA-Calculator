@@ -444,25 +444,37 @@ public class ProfileTotalCGPAControl implements Initializable{
     void addToProfile(ActionEvent event) throws IOException {
 
 
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Add to PROFILE");
-        alert.setHeaderText("After add to profile, \n\t\t Your total CGPA will be " + cgpaClass.getCalculatedCGPA() +
-                "\n\t\t And total credit will be " + cgpaClass.getTotalCredit());
-        alert.setContentText("Are you sure...??");
+        if (dataList.getCurrentProfile().getSessionList().size()<=18) {
 
-        if (alert.showAndWait().get().equals(ButtonType.OK)) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Add to PROFILE");
+            alert.setHeaderText("After add to profile, \n\t\t Your total CGPA will be " + cgpaClass.getCalculatedCGPA() +
+                    "\n\t\t And total credit will be " + cgpaClass.getTotalCredit());
+            alert.setContentText("Are you sure...??");
 
-            Session session = new Session(sessionName(),cgpaClass);
-            dataList.getCurrentProfile().addSession(session);
-            dataList.getCurrentProfile().setCgpa(cgpaClass.getCalculatedCGPA());
-            dataList.getCurrentProfile().setCreditCompleted(cgpaClass.getTotalCredit());
-            createDataList(dataList);
+            if (alert.showAndWait().get().equals(ButtonType.OK)) {
 
-            reset(event);
-            btAddProfile.setDisable(true);
+                Session session = new Session(sessionName(),cgpaClass);
+                dataList.getCurrentProfile().addSession(session);
+                dataList.getCurrentProfile().setCgpa(cgpaClass.getCalculatedCGPA());
+                dataList.getCurrentProfile().setCreditCompleted(cgpaClass.getTotalCredit());
+                createDataList(dataList);
 
-            setLabel();
+                reset(event);
+                btAddProfile.setDisable(true);
+
+                setLabel();
+            }
         }
+
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Limit Reached");
+            alert.setContentText("Open another profile");
+            alert.show();
+        }
+
+
 
 
 

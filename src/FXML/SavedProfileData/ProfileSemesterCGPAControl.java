@@ -432,27 +432,39 @@ public class ProfileSemesterCGPAControl implements Initializable{
     @FXML
     void addToProfile(ActionEvent event) throws IOException {
 
-        cgpaClass.setCurrentCGPA(dataList.getCurrentProfile().getCgpa());
-        cgpaClass.setCurrentCredit(dataList.getCurrentProfile().getCreditCompleted());
+        if (dataList.getCurrentProfile().getSessionList().size()<=18) {
+
+            cgpaClass.setCurrentCGPA(dataList.getCurrentProfile().getCgpa());
+            cgpaClass.setCurrentCredit(dataList.getCurrentProfile().getCreditCompleted());
 
 
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Add to PROFILE");
-        alert.setHeaderText("After add to profile, \n\t\t Your total CGPA will be " + cgpaClass.getCalculatedCGPA() +
-                                                  "\n\t\t And total credit will be " + cgpaClass.getTotalCredit());
-        alert.setContentText("Are you sure...??");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Add to PROFILE");
+            alert.setHeaderText("After add to profile, \n\t\t Your total CGPA will be " + cgpaClass.getCalculatedCGPA() +
+                    "\n\t\t And total credit will be " + cgpaClass.getTotalCredit());
+            alert.setContentText("Are you sure...??");
 
-        if (alert.showAndWait().get().equals(ButtonType.OK)) {
+            if (alert.showAndWait().get().equals(ButtonType.OK)) {
 
-            Session session = new Session(sessionName(),cgpaClass);
-            dataList.getCurrentProfile().addSession(session);
-            dataList.getCurrentProfile().setCgpa(cgpaClass.getCalculatedCGPA());
-            dataList.getCurrentProfile().setCreditCompleted(cgpaClass.getTotalCredit());
-            createDataList(dataList);
+                Session session = new Session(sessionName(),cgpaClass);
+                dataList.getCurrentProfile().addSession(session);
+                dataList.getCurrentProfile().setCgpa(cgpaClass.getCalculatedCGPA());
+                dataList.getCurrentProfile().setCreditCompleted(cgpaClass.getTotalCredit());
+                createDataList(dataList);
 
-            reset(event);
-            btAddProfile.setDisable(true);
+                reset(event);
+                btAddProfile.setDisable(true);
+            }
+
         }
+
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Limit Reached");
+            alert.setContentText("Open another profile");
+            alert.show();
+        }
+
 
 
 
