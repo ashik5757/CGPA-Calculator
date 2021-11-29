@@ -2,6 +2,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -30,10 +32,30 @@ public class LaunchApp extends Application {
 
         primaryStage.setTitle("CGPA Calculator");
         primaryStage.setScene(new Scene(root));
-        //primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
 
+        primaryStage.setOnCloseRequest(e ->{
+            e.consume();
+            logOut(primaryStage);
+        });
 
+
+
+    }
+
+
+    public void logOut(Stage stage) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Log Out");
+        alert.setHeaderText("You are about to EXIT");
+        alert.setContentText("Are you sure??");
+
+
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            stage.close();
+        }
 
     }
 

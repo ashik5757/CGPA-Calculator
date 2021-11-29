@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -44,28 +46,43 @@ public class NewProfilePanelControl implements Initializable {
     @FXML
     void createProfile(ActionEvent event) throws IOException, ClassNotFoundException {
 
-        File dataFile = new File("/CGPA-Calculator/data/DataList.txt");
-        Profile profile;
 
-        if (!dataFile.exists()) {
-            profile = new Profile(tfName.getText(),cbUniversity.getValue(),cbSession.getValue(),cbYear.getValue());
-            addProfile(profile);
+        if (!tfName.getText().isBlank() && cbSession.getValue()!=null && cbYear.getValue()!=null && cbUniversity.getValue()!=null) {
+
+            File dataFile = new File("/CGPA-Calculator/data/DataList.txt");
+            Profile profile;
+
+            if (!dataFile.exists()) {
+                profile = new Profile(tfName.getText(),cbUniversity.getValue(),cbSession.getValue(),cbYear.getValue());
+                addProfile(profile);
+            }
+
+            else if (dataFile.exists())  {
+                profile = new Profile(profileName(tfName.getText()),cbUniversity.getValue(),cbSession.getValue(),cbYear.getValue());
+                addProfile(profile);
+            }
+
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../SavedProfileData/ProfilePanel.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
         }
 
-        else if (dataFile.exists())  {
-            profile = new Profile(profileName(tfName.getText()),cbUniversity.getValue(),cbSession.getValue(),cbYear.getValue());
-            addProfile(profile);
+
+        else {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Input format incorrect or Empty");
+            alert.setContentText("Please input all information");
+            alert.show();
+
         }
 
-
-
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../SavedProfileData/ProfilePanel.fxml"));
-        Parent root = loader.load();
-
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
 
 
     }
@@ -225,9 +242,17 @@ public class NewProfilePanelControl implements Initializable {
     @FXML
     void exit(ActionEvent event) {
 
-        System.exit(0);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Log Out");
+        alert.setHeaderText("You are about to EXIT");
+        alert.setContentText("Are you sure??");
+
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            System.exit(0);
+        }
 
     }
+
 
     public void setCbUniversity() {
 

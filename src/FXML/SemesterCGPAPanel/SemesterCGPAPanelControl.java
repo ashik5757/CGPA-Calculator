@@ -465,7 +465,15 @@ public class SemesterCGPAPanelControl implements Initializable {
     @FXML
     void exit(ActionEvent event) {
 
-        System.exit(0);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Log Out");
+        alert.setHeaderText("You are about to EXIT");
+        alert.setContentText("Are you sure??");
+
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            System.exit(0);
+        }
+
     }
 
 //    public void setCbCourse(ComboBox<String> course) {
@@ -513,7 +521,9 @@ public class SemesterCGPAPanelControl implements Initializable {
 
     }
 
-    public void setAllGrade() {
+    @FXML
+    void setAllGrade(ActionEvent event) {
+        //reset(event);
         setGrade(cbGrade1);
         setGrade(cbGrade2);
         setGrade(cbGrade3);
