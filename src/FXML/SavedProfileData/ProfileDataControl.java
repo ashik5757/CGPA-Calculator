@@ -126,16 +126,28 @@ public class ProfileDataControl implements Initializable {
 
     }
 
+
+    public void alertMsg(String msg) {
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Course Wise Grade-Sheet");
+        alert.setContentText(msg);
+        alert.getDialogPane().setPrefSize(450,Region.USE_COMPUTED_SIZE);
+        alert.show();
+    }
+
+
+
+
+
+
+
     @FXML
     void session1(ActionEvent event) throws IOException {
 
         if (bt2.isVisible()) {
             String msg = profile.getSessionList().get(0).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt2.isVisible()) {
@@ -151,11 +163,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt3.isVisible()) {
             String msg = profile.getSessionList().get(1).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt3.isVisible()) {
@@ -170,11 +178,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt4.isVisible()) {
             String msg = profile.getSessionList().get(2).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt4.isVisible()) {
@@ -189,11 +193,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt5.isVisible()) {
             String msg = profile.getSessionList().get(3).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt5.isVisible()) {
@@ -208,11 +208,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt6.isVisible()) {
             String msg = profile.getSessionList().get(4).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt6.isVisible()) {
@@ -227,11 +223,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt7.isVisible()) {
             String msg = profile.getSessionList().get(5).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt7.isVisible()) {
@@ -246,11 +238,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt8.isVisible()) {
             String msg = profile.getSessionList().get(6).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt8.isVisible()) {
@@ -263,11 +251,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt9.isVisible()) {
             String msg = profile.getSessionList().get(7).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt9.isVisible()) {
@@ -280,11 +264,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt10.isVisible()) {
             String msg = profile.getSessionList().get(8).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt10.isVisible()) {
@@ -297,11 +277,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt11.isVisible()) {
             String msg = profile.getSessionList().get(9).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt11.isVisible()) {
@@ -314,11 +290,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt12.isVisible()) {
             String msg = profile.getSessionList().get(10).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt12.isVisible()) {
@@ -331,11 +303,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt13.isVisible()) {
             String msg = profile.getSessionList().get(11).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt13.isVisible()) {
@@ -348,11 +316,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt14.isVisible()) {
             String msg = profile.getSessionList().get(12).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt4.isVisible()) {
@@ -365,11 +329,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt15.isVisible()) {
             String msg = profile.getSessionList().get(13).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt15.isVisible()) {
@@ -382,11 +342,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt16.isVisible()) {
             String msg = profile.getSessionList().get(14).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt16.isVisible()) {
@@ -399,11 +355,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt17.isVisible()) {
             String msg = profile.getSessionList().get(15).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt17.isVisible()) {
@@ -416,11 +368,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt18.isVisible()) {
             String msg = profile.getSessionList().get(16).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!bt18.isVisible()) {
@@ -433,11 +381,7 @@ public class ProfileDataControl implements Initializable {
 
         if (bt18.getGraphic() ==null) {
             String msg = profile.getSessionList().get(17).getCgpaClass().toString()+"";
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Course Wise Grade-Sheet");
-            alert.setContentText(msg);
-            alert.getDialogPane().setPrefSize(500,Region.USE_COMPUTED_SIZE);
-            alert.show();
+            alertMsg(msg);
         }
 
         if (!(bt18.getGraphic() ==null)) {
