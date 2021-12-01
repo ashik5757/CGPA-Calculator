@@ -1,9 +1,36 @@
-.textfield {
+.textfield{
 -fx-background-color : white;
 -fx-background-radius : 20;
 -fx-border-color :  linear-gradient(to left, #283c86, #45a247);
 -fx-border-radius : 20;
+-fx-font-family :  Candara;
+-fx-font-style :  italic;
+-fx-font-weight : BOLD;
+-fx-font-size : 17;
 }
+
+.textfield_Large{
+-fx-background-color : white;
+-fx-background-radius : 20;
+-fx-border-color :  linear-gradient(to left, #283c86, #45a247);
+-fx-border-radius : 20;
+-fx-font-family :  Candara;
+-fx-font-style :  italic;
+-fx-font-weight : BOLD;
+-fx-font-size : 20;
+}
+
+.textfield_Normal{
+-fx-background-color : white;
+-fx-background-radius : 20;
+-fx-border-color :  linear-gradient(to left, #283c86, #45a247);
+-fx-border-radius : 20;
+-fx-font-family :  Candara;
+-fx-font-style :  italic;
+-fx-font-size : 19;
+}
+
+
 
 .button-filled{
 -fx-background-color :  linear-gradient(to left, #283c86, #45a247);
@@ -36,4 +63,20 @@
 -fx-background-radius : 20;
 -fx-border-color :  linear-gradient(to left, #283c86, #45a247);
 -fx-border-radius : 20;
+-fx-font-style :  italic;
+-fx-font-weight : BOLD;
+-fx-font-size : 15;
+
+}
+
+.combo-box_Credit{
+-fx-background-color : white;
+-fx-background-radius : 20;
+-fx-border-color :  linear-gradient(to left, #283c86, #45a247);
+-fx-border-radius : 20;
+-fx-font-family :  Candara;
+-fx-font-style :  italic;
+-fx-font-weight : BOLD;
+-fx-font-size : 17;
+
 }
