@@ -54,15 +54,29 @@ public class SavedProfilePanelControl implements Initializable {
     void openProfile(ActionEvent event) throws IOException {
 
 
-        dataList.setCurrentProfile(getSelectedProfile());
-        createDataList(dataList);
+        if (cbSavedProfile.getValue()!=null) {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../SavedProfileData/ProfilePanel.fxml"));
-        Parent root = loader.load();
+            dataList.setCurrentProfile(getSelectedProfile());
+            createDataList(dataList);
 
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../SavedProfileData/ProfilePanel.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        }
+
+        else {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Input format incorrect or Empty");
+            alert.setContentText("Please select the Profile");
+            alert.show();
+        }
+
 
     }
 

@@ -572,12 +572,10 @@ public class SemesterCGPAPanelControl implements Initializable {
 //                "-fx-font-family :  Candara;" +
                         "-fx-font-style :  italic;" +
                         "-fx-font-weight : BOLD;" +
-                        "-fx-font-size : 16"
+                        "-fx-font-size : 15"
         );
 
     }
-
-
 
 
 
