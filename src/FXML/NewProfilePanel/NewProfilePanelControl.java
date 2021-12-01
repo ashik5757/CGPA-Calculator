@@ -10,10 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -269,6 +266,45 @@ public class NewProfilePanelControl implements Initializable {
         Integer[] year = {15,16,17,18,19,20,21,22};
         cbYear.getItems().setAll(year);
     }
+
+
+    @FXML
+    void updateSession(ActionEvent event) {
+
+        if (cbUniversity.getValue().equals("AUST")) {
+            String[] session = {"Fall","Spring"};
+            cbSession.getItems().setAll(session);
+            cbSessionReset(cbSession);
+        }
+
+        else {
+            String[] session = {"Summer","Fall","Spring"};
+            cbSession.getItems().setAll(session);
+            cbSessionReset(cbSession);
+        }
+
+
+    }
+
+
+    public void cbSessionReset(ComboBox<String> cbSession) {
+
+        cbSession.getSelectionModel().clearSelection();
+        cbSession.getSelectionModel().selectFirst();
+
+//        cbSession.setButtonCell(new ListCell<String>() {
+//            @Override
+//            protected void updateItem(String item, boolean empty) {
+//                super.updateItem(item, empty);
+//                if (empty || item == null) {
+//                    setText("Session");
+//                } else {
+//                    setText(item);
+//                }
+//            }
+//        });
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
