@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXML.NewProfilePanel.NewProfilePanelControl">
    <children>
-      <TextField fx:id="tfName" layoutX="353.0" layoutY="247.0" prefHeight="39.0" prefWidth="330.0" promptText="Enter a name" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;">
+      <TextField fx:id="tfName" layoutX="353.0" layoutY="247.0" prefHeight="39.0" prefWidth="330.0" promptText="Enter a name" styleClass="textfield_Normal" stylesheets="@../../CSS/CssStyleSheet.css">
          <font>
             <Font name="System Italic" size="17.0" />
          </font>
@@ -29,8 +29,8 @@
             <Font name="Candara Bold Italic" size="19.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbSession" layoutX="353.0" layoutY="315.0" prefHeight="42.0" prefWidth="173.0" promptText="Session" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
-      <ComboBox fx:id="cbYear" layoutX="568.0" layoutY="315.0" prefHeight="42.0" prefWidth="115.0" promptText="Year" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+      <ComboBox fx:id="cbSession" layoutX="353.0" layoutY="315.0" prefHeight="42.0" prefWidth="173.0" promptText="Session" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
+      <ComboBox fx:id="cbYear" layoutX="568.0" layoutY="315.0" prefHeight="42.0" prefWidth="115.0" promptText="Year" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
       <Label alignment="CENTER" layoutX="534.0" layoutY="326.0" prefHeight="17.0" prefWidth="28.0" text="-">
          <font>
             <Font name="Algerian" size="19.0" />
@@ -41,7 +41,7 @@
             <Font name="Candara Bold Italic" size="19.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbUniversity" layoutX="353.0" layoutY="393.0" prefHeight="42.0" prefWidth="330.0" promptText="Select University" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+      <ComboBox fx:id="cbUniversity" layoutX="353.0" layoutY="393.0" onAction="#updateSession" prefHeight="42.0" prefWidth="330.0" promptText="Select University" styleClass="combo-box" stylesheets="@../../CSS/CssStyleSheet.css" />
       <Label alignment="CENTER" layoutY="50.0" prefHeight="106.0" prefWidth="850.0" style="-fx-background-color: linear-gradient(to left, #283c86, #45a247);" text="Create a New Profile" textFill="WHITE">
          <font>
             <Font name="Candara Bold Italic" size="22.0" />

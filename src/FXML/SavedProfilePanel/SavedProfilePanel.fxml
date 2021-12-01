@@ -28,6 +28,6 @@
             <Font name="Candara Bold Italic" size="19.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbSavedProfile" layoutX="399.0" layoutY="330.0" prefHeight="42.0" prefWidth="289.0" promptText="Select Proflie" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+      <ComboBox fx:id="cbSavedProfile" layoutX="399.0" layoutY="330.0" prefHeight="42.0" prefWidth="289.0" promptText="Select Proflie" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
    </children>
 </AnchorPane>

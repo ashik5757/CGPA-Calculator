@@ -19,7 +19,7 @@
             <Font name="Candara Italic" size="23.0" />
          </font>
       </JFXButton>
-      <TextField fx:id="tfCredit" layoutX="419.0" layoutY="270.0" prefHeight="45.0" prefWidth="236.0" promptText="Enter Credit" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;">
+      <TextField fx:id="tfCredit" layoutX="419.0" layoutY="270.0" prefHeight="45.0" prefWidth="236.0" promptText="Enter Credit" styleClass="textfield_Large" stylesheets="@../../CSS/CssStyleSheet.css">
          <font>
             <Font name="System Italic" size="17.0" />
          </font>
@@ -29,7 +29,7 @@
             <Font name="Candara Bold Italic" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="tfCGPA" layoutX="419.0" layoutY="347.0" prefHeight="45.0" prefWidth="236.0" promptText="Enter CGPA" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;">
+      <TextField fx:id="tfCGPA" layoutX="419.0" layoutY="347.0" prefHeight="45.0" prefWidth="236.0" promptText="Enter CGPA" styleClass="textfield_Large" stylesheets="@../../CSS/CssStyleSheet.css">
          <font>
             <Font name="System Italic" size="17.0" />
          </font>
@@ -49,6 +49,6 @@
             <Font name="Candara Bold Italic" size="19.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbUniversity" layoutX="419.0" layoutY="421.0" prefHeight="45.0" prefWidth="236.0" promptText="Select University" styleClass="combo-box" stylesheets="@../../CSS/CssStyleSheet.css" />
+      <ComboBox fx:id="cbUniversity" layoutX="419.0" layoutY="421.0" prefHeight="45.0" prefWidth="236.0" promptText="Select University" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
    </children>
 </AnchorPane>

@@ -49,8 +49,8 @@
                         <Font name="System Italic" size="17.0" />
                      </font>
                   </TextField>
-                  <ComboBox fx:id="cbCredit1" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
-                  <ComboBox fx:id="cbGrade1" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+                  <ComboBox fx:id="cbCredit1" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
+                  <ComboBox fx:id="cbGrade1" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -68,8 +68,8 @@
                         <Font name="System Italic" size="17.0" />
                      </font>
                   </TextField>
-                  <ComboBox fx:id="cbCredit2" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
-                  <ComboBox fx:id="cbGrade2" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+                  <ComboBox fx:id="cbCredit2" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
+                  <ComboBox fx:id="cbGrade2" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -87,8 +87,8 @@
                         <Font name="System Italic" size="17.0" />
                      </font>
                   </TextField>
-                  <ComboBox fx:id="cbCredit3" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
-                  <ComboBox fx:id="cbGrade3" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+                  <ComboBox fx:id="cbCredit3" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
+                  <ComboBox fx:id="cbGrade3" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -106,8 +106,8 @@
                         <Font name="System Italic" size="17.0" />
                      </font>
                   </TextField>
-                  <ComboBox fx:id="cbCredit4" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
-                  <ComboBox fx:id="cbGrade4" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+                  <ComboBox fx:id="cbCredit4" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
+                  <ComboBox fx:id="cbGrade4" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -125,8 +125,8 @@
                         <Font name="System Italic" size="17.0" />
                      </font>
                   </TextField>
-                  <ComboBox fx:id="cbCredit5" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
-                  <ComboBox fx:id="cbGrade5" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+                  <ComboBox fx:id="cbCredit5" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
+                  <ComboBox fx:id="cbGrade5" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -144,8 +144,8 @@
                         <Font name="System Italic" size="17.0" />
                      </font>
                   </TextField>
-                  <ComboBox fx:id="cbCredit6" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
-                  <ComboBox fx:id="cbGrade6" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-color: linear-gradient(to left, #283c86, #45a247); -fx-border-radius: 20;" />
+                  <ComboBox fx:id="cbCredit6" layoutX="10.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Credit" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
+                  <ComboBox fx:id="cbGrade6" layoutX="139.0" layoutY="23.0" prefHeight="42.0" prefWidth="129.0" promptText="Grade" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -196,6 +196,6 @@
             <Font name="Candara Bold Italic" size="20.0" />
          </font>
       </JFXButton>
-      <ComboBox fx:id="cbUniversity" layoutX="392.0" layoutY="618.0" onAction="#setAllGrade" prefHeight="42.0" prefWidth="101.0" styleClass="combo-box" stylesheets="@../../CSS/CssStyleSheet.css" />
+      <ComboBox fx:id="cbUniversity" layoutX="392.0" layoutY="618.0" onAction="#setAllGrade" prefHeight="42.0" prefWidth="101.0" styleClass="combo-box_Credit" stylesheets="@../../CSS/CssStyleSheet.css" />
    </children>
 </AnchorPane>
