@@ -135,14 +135,14 @@ public class CGPA implements Serializable {
     @Override
     public String toString() {
 
-        StringBuilder msg = new StringBuilder("     Course name          Credit          Grade Point           Letter Grade      " +
-                "\n----------------------------------------------------------------------------------------------");
+        StringBuilder msg = new StringBuilder("      Course name              Credit             Grade Point            Letter Grade      " +
+                "\n-----------------------------------------------------------------------------------");
 
         for (Course course : courseList) {
             msg.append(course.toString());
         }
 
-        msg.append("\n\n Term CGPA : " + getTermCGPA() + "        Credit : " + getTermCredit());
+        msg.append("\n\n                 Term CGPA : " + getTermCGPA() + "                      Credit : " + getTermCredit());
 
         return msg.toString();
     }

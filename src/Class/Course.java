@@ -152,10 +152,10 @@ public class Course implements Serializable {
     public String toString() {
 
         return  "\n         " + name +
-                "                   " + credit +
-                "                   " + grade +
-                "                                  " + letterGrade +
-                "\n----------------------------------------------------------------------------------------------"
+                "                      " + credit +
+                "                      " + grade +
+                "                              " + letterGrade +
+                "\n-----------------------------------------------------------------------------------"
 
                 ;
 
