@@ -687,7 +687,7 @@ public class ProfileSemesterCGPAControl implements Initializable{
 
     public void setCbCredit(ComboBox<Double> credit) {
 
-        Double[] creditList = {0.5,1.0,2.0,3.0,4.0};
+        Double[] creditList = {0.5,1.0,2.0,3.0,4.0,4.5};
         credit.getItems().setAll(creditList);
 
     }
