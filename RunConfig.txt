@@ -1,4 +1,6 @@
 --module-path
-"F:\Download\Soft\Java\JavaFx\javafx-sdk-16\lib"
+"F:\Download\Soft\Java\JavaFx\javafx-sdk-17.0.0.1\lib"
 --add-modules
 javafx.controls,javafx.fxml
+--add-exports
+javafx.base/com.sun.javafx.event=ALL-UNNAMED
