@@ -547,8 +547,8 @@ public class TotalCGPAPanel2Control implements Initializable {
         ArrayList<String> list = new ArrayList<>();
 
 
-        //InputStream in = new FileInputStream("CourseName.txt");                        //IDE
-        InputStream in = getClass().getResourceAsStream("/CourseName.txt");      // JAR
+        InputStream in = new FileInputStream("CourseName.txt");                        //IDE
+        //InputStream in = getClass().getResourceAsStream("/CourseName.txt");      // JAR
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
