@@ -70,10 +70,11 @@ This is a JavaFX based CGPA calculator application.
 
 - ### _Process_ :
 
-  - Open new project in IntelliJ IDEA.
+  - Download the zip file of code and extract.
+  - Open it with IntelliJ IDE.
+  - Update the project sdk and language level(default) in project structure.
   - Attach lib folder directory of javafx-sdk to Libraries in project structure.
-  - Attach **FontAwesome**,**JFoenix**and **ControlFX** jar file in module dependency in project structure.
-  - Download the zip file of the code.
+  - Attach **FontAwesomeFX 9** , **JFoenix** and **ControlFX** jar file in module dependency in project structure.
   - Now run the **FakeLauncher.java** or **LaunchApp.java**.
 
 If the program does not run and shows an error like following line, then update the VM option in run configuration.
@@ -82,7 +83,7 @@ If the program does not run and shows an error like following line, then update 
 
 <br>
 
-Go to the Run -> Edit Configurations... of **FakeLauncher.java** or **LaunchApp.java** and paste the following line in _Add VM option_ from _Modify option_.
+Go to the Run -> Edit Configurations... of **FakeLauncher.java** and **LaunchApp.java** and paste the following line in _Add VM option_ from _Modify option_.
 
 ~~~
 --module-path
