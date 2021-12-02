@@ -103,7 +103,19 @@ It is better to add VM option in run config to omit unnecessary error :
 <br>
 
 
+## Screenshot of Functionalities :
 
+<br>
+
+- ### _Homepage_ :
+
+  - **Semester CGPA :**
+
+<p align="center" width="100%">
+    
+</p>
+
+![img.png](img.png)
 
 
 
