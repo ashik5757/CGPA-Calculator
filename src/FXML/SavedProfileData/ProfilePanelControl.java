@@ -46,7 +46,7 @@ public class ProfilePanelControl implements Initializable {
     @FXML
     void calculate(ActionEvent event) throws IOException {
 
-        Parent panel = FXMLLoader.load(getClass().getResource("CalculatePanel.fxml"));
+        Parent panel = FXMLLoader.load(getClass().getResource("/FXML/SavedProfileData/CalculatePanel.fxml"));
         mainPanel.getChildren().setAll(panel);
 
     }
@@ -61,7 +61,7 @@ public class ProfilePanelControl implements Initializable {
 
         if (alert.showAndWait().get() == ButtonType.OK) {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../Homepage2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Homepage2.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -76,7 +76,7 @@ public class ProfilePanelControl implements Initializable {
     @FXML
     void profile(ActionEvent event) throws IOException {
 
-        Parent panel = FXMLLoader.load(getClass().getResource("ProfileData.fxml"));
+        Parent panel = FXMLLoader.load(getClass().getResource("/FXML/SavedProfileData/ProfileData.fxml"));
         mainPanel.getChildren().setAll(panel);
 
     }
@@ -85,7 +85,7 @@ public class ProfilePanelControl implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfileData.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/SavedProfileData/ProfileData.fxml"));
         Parent panel = null;
         try {
             panel = loader.load();

@@ -392,7 +392,7 @@ public class ProfileDataControl implements Initializable {
 
     public void loadCalculatePanel(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../SavedProfileData/ProfilePanel.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/SavedProfileData/ProfilePanel.fxml"));
         Parent root = loader.load();
 
         ProfilePanelControl profilePanelControl = loader.getController();

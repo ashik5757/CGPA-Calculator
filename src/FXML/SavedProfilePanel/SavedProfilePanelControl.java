@@ -59,7 +59,7 @@ public class SavedProfilePanelControl implements Initializable {
             dataList.setCurrentProfile(getSelectedProfile());
             createDataList(dataList);
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../SavedProfileData/ProfilePanel.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/SavedProfileData/ProfilePanel.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

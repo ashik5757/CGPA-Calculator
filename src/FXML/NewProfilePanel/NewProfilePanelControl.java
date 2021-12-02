@@ -60,7 +60,7 @@ public class NewProfilePanelControl implements Initializable {
             }
 
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../SavedProfileData/ProfilePanel.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/SavedProfileData/ProfilePanel.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -164,78 +164,6 @@ public class NewProfilePanelControl implements Initializable {
 
 
 
-
-
-
-
-//    public void createProfileData(Object profile) throws IOException{
-//
-//        //FileOutputStream fileOut = new FileOutputStream(file);
-//        FileOutputStream fileOut = new FileOutputStream(fileName());
-//        ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
-//
-//
-//        objOut.writeObject(profile);
-//        fileOut.close();
-//        objOut.flush();
-//        objOut.close();
-//
-//
-//    }
-//
-//    public void updateFileList() {
-//
-//
-//    }
-
-
-
-//    public void reader() throws IOException, ClassNotFoundException {
-//
-//        FileInputStream fileRead = new FileInputStream("/CGPA-Calculator/data/Profile/Profile-1.txt");
-//        ObjectInputStream objRead = new ObjectInputStream(fileRead);
-//
-//        Profile p = (Profile) objRead.readObject();
-//       // System.out.println(p.toString());
-//
-//        fileRead.close();
-//        objRead.close();
-//
-//    }
-
-
-//    public File fileName() throws IOException {
-//
-//        File file;
-//        String fileName = "Profile-";
-//        int i = 1;
-//
-//        while(true) {
-//
-//            file = new File("/CGPA-Calculator/data/Profile/"+fileName+i+".txt");
-//
-//            if (!file.exists()) {
-//                break;
-//            }
-//
-//            else if (file.exists()) {
-//                i++;
-//            }
-//
-//        }
-//
-//        return file;
-//
-//    }
-
-
-
-
-
-
-
-
-
     @FXML
     void exit(ActionEvent event) {
 
@@ -290,19 +218,19 @@ public class NewProfilePanelControl implements Initializable {
     public void cbSessionReset(ComboBox<String> cbSession) {
 
         cbSession.getSelectionModel().clearSelection();
-        cbSession.getSelectionModel().selectFirst();
+        //cbSession.getSelectionModel().selectFirst();
 
-//        cbSession.setButtonCell(new ListCell<String>() {
-//            @Override
-//            protected void updateItem(String item, boolean empty) {
-//                super.updateItem(item, empty);
-//                if (empty || item == null) {
-//                    setText("Session");
-//                } else {
-//                    setText(item);
-//                }
-//            }
-//        });
+        cbSession.setButtonCell(new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText("Session");
+                } else {
+                    setText(item);
+                }
+            }
+        });
     }
 
 
