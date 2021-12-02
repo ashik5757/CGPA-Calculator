@@ -11,6 +11,8 @@ This is a JavaFX based CGPA calculator application.
 - Different grade policy of diffrenet university. (Only for BD)
 - User can create a profile to save the semester wise grade sheet.
 - User can use/open any saved profile at any time.
+- User can store upto 18 semester CGPA data in a single profile.
+- Text suggestions of courses name. (Auto completion)
 
 
 <br>
@@ -111,40 +113,74 @@ It is better to add VM option in run config to omit unnecessary error :
 
 
 <p align="center" width="100%">
-    <img src="https://user-images.githubusercontent.com/81816852/144481614-4d3b597f-832b-48f3-90cf-38b003559355.png" height="60%" width="60%">
+    <img src="https://user-images.githubusercontent.com/81816852/144481614-4d3b597f-832b-48f3-90cf-38b003559355.png" height="70%" width="70%">
 </p>
 
 <br>
 
 - ### _Total CGPA_ :
 <p align="center" width="100%">
-    <img src="https://user-images.githubusercontent.com/81816852/144481852-9ff51692-50a7-4126-869a-cc4e9d25bde2.png" height="60%" width="60%">
-    <img src="https://user-images.githubusercontent.com/81816852/144482091-065f21cf-dc3f-4938-860c-3488ca140a64.png" height="60%" width="60%">
+    <img src="https://user-images.githubusercontent.com/81816852/144481852-9ff51692-50a7-4126-869a-cc4e9d25bde2.png" height="70%" width="70%">
+    <img src="https://user-images.githubusercontent.com/81816852/144482091-065f21cf-dc3f-4938-860c-3488ca140a64.png" height="70%" width="70%">
 </p>
 
 <br>
 
 - ### _Create a New Profile_ :
 <p align="center" width="100%">
-    <img src="https://user-images.githubusercontent.com/81816852/144481911-1810b302-005b-48fd-acb9-bda0e8c31fe0.png" height="60%" width="60%">
+    <img src="https://user-images.githubusercontent.com/81816852/144481911-1810b302-005b-48fd-acb9-bda0e8c31fe0.png" height="70%" width="70%">
 </p>
 
 <br>
 
 - ### _Saved Profile_ :
 <p align="center" width="100%">
-    <img src="https://user-images.githubusercontent.com/81816852/144481976-b91ebe11-ed87-49fe-9473-9c3f7cf48a47.png" height="60%" width="60%">
-    <img src="https://user-images.githubusercontent.com/81816852/144482210-ab3deed5-ec2d-4d54-b320-3e3fa0fc2b66.png" height="60%" width="60%">
-    <img src="https://user-images.githubusercontent.com/81816852/144482295-1a61b428-0118-4489-99b9-1c66a9891d00.png" height="60%" width="60%">
-    <img src="https://user-images.githubusercontent.com/81816852/144482328-fc7cfc73-5ab8-4905-adba-89501c89c91f.png" height="60%" width="60%">
-    <img src="https://user-images.githubusercontent.com/81816852/144482662-89d8f8e5-7a49-416b-872a-57e6b875b063.png" height="60%" width="60%">
-    <img src="https://user-images.githubusercontent.com/81816852/144483244-5fb1ebd5-c7d7-466c-bb4b-6ec621bd504f.png" height="60%" width="60%">
-    <img src="https://user-images.githubusercontent.com/81816852/144483359-a5862092-dbe8-4daf-81b2-bb49bad7f460.png" height="60%" width="60%">
+    <img src="https://user-images.githubusercontent.com/81816852/144481976-b91ebe11-ed87-49fe-9473-9c3f7cf48a47.png" height="70%" width="70%">
 </p>
+
+> Saved Profile panel - where user can open any saved profile.
 
 <br>
 
+<p align="center" width="100%">
+    <img src="https://user-images.githubusercontent.com/81816852/144482210-ab3deed5-ec2d-4d54-b320-3e3fa0fc2b66.png" height="70%" width="70%">
+</p>
 
+> Homepage of a Saved Profile - where user can calculate the CGPA and also ad to profile
+
+<br>
+
+<p align="center" width="100%">
+    <img src="https://user-images.githubusercontent.com/81816852/144482295-1a61b428-0118-4489-99b9-1c66a9891d00.png" height="70%" width="70%">
+</p>
+
+> Calculate panel of Semester CGPA of saved profile
+
+<br>
+
+<p align="center" width="100%">
+    <img src="https://user-images.githubusercontent.com/81816852/144482662-89d8f8e5-7a49-416b-872a-57e6b875b063.png" height="70%" width="70%">
+</p>
+
+> Calculate panel of Total CGPA of saved profile
+
+<br>
+
+<p align="center" width="100%">
+    <img src="https://user-images.githubusercontent.com/81816852/144483244-5fb1ebd5-c7d7-466c-bb4b-6ec621bd504f.png" height="70%" width="70%">
+</p>
+
+> After adding the calculated CGPA to the profile 
+
+<br>
+
+<p align="center" width="100%">
+    <img src="https://user-images.githubusercontent.com/81816852/144483359-a5862092-dbe8-4daf-81b2-bb49bad7f460.png" height="70%" width="70%">
+</p>
+
+> Details information of a saved semester CGPA
+
+<br>
 
 
 
